@@ -11,7 +11,7 @@ module.exports = {
     ],
     output: {
         filename: 'js/[name].[hash].js',
-        path: path.resolve( __dirname, 'dist' ),
+        path: path.resolve( __dirname, 'dist' )
     },
     module: {
         rules: [
@@ -31,7 +31,7 @@ module.exports = {
                 enforce: 'pre',
                 test: /\.js?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'eslint-loader',
+                loader: 'eslint-loader'
             },
             {
                 test: /\.js?$/,
@@ -39,9 +39,9 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     presets: [ 'babel-preset-latest' ],
-                    cacheDirectory: true,
+                    cacheDirectory: true
                 }
-            },
+            }
         ]
     },
     plugins: [
@@ -50,9 +50,9 @@ module.exports = {
         } ),
         new HtmlWebpackPlugin( {
             template: './src/index.html',
-            hash: true,
+            hash: true
         } ),
-        new CleanWebpackPlugin( [ 'dist' ] ),
+        new CleanWebpackPlugin( [ 'dist' ] )
     ],
-    devtool: 'source-map',
+    devtool: 'source-map'
 };

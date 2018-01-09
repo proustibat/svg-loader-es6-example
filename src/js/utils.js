@@ -1,0 +1,1 @@
+HTMLDocument.prototype.ready = () => new Promise( resolve => document.readyState === 'complete' ? resolve() : new Promise( resolve => ( document.onreadystatechange = () => document.readyState === 'complete' && resolve() ) ).then( resolve() ) );

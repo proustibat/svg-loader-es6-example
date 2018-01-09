@@ -14,9 +14,9 @@ const logger = {
             underline += '-';
         }
         underline += '|';
-        log( chalk.white.bgGreen.bold( `${underline}` ) );
-        log( chalk.white.bgGreen.bold( `${prefix}${val}${suffix}` ) );
-        log( chalk.white.bgGreen.bold( `${underline}` ) );
+        log( chalk.white.bgGreen.bold( `${ underline }` ) );
+        log( chalk.white.bgGreen.bold( `${ prefix }${ val }${ suffix }` ) );
+        log( chalk.white.bgGreen.bold( `${ underline }` ) );
         log( '\r' );
     },
 
@@ -26,20 +26,20 @@ const logger = {
         for ( let i = 0; i < charTotal; i++ ) {
             underline += '-';
         }
-        log( chalk.green( `${underline}` ) );
+        log( chalk.green( `${ underline }` ) );
     },
 
     congrats: msg => {
         log( '\r' );
-        log( chalk.white.bgGreen.bold( ` ☆    ${util.inspect( msg.toUpperCase(), false, null )}  ☆  ` ) );
+        log( chalk.white.bgGreen.bold( ` ☆    ${ util.inspect( msg.toUpperCase(), false, null ) }  ☆  ` ) );
         log( '\r' );
     },
 
-    info: msg => log( chalk.white( ( `►  ${util.inspect( msg, false, null )}` ) ) ),
+    info: msg => log( chalk.white( ( `►  ${ util.inspect( msg, false, null ) }` ) ) ),
 
-    done: msg => log( chalk.green( ( `✓  Done:\n ${util.inspect( msg, false, null )}` ) ) ),
+    done: msg => log( chalk.green( ( `✓  Done:\n ${ util.inspect( msg, false, null ) }` ) ) ),
 
-    error: err => log( chalk.red( ( `☹  Error:\n ${util.inspect( err, false, null )}` ) ) )
+    error: err => log( chalk.red( ( `☹  Error:\n ${ util.inspect( err, false, null ) }` ) ) )
 };
 
 class Build {
@@ -61,14 +61,14 @@ class Build {
     prepareAppInfo () {
         logger.info( 'Prepare AppInfo data' );
         const timestamp = Date.now();
-        this.contentFile = `window.AppInfo = { name: '${this.pkg.name}', version: '${this.pkg.version}', build: '${timestamp}', dateBuild: '${new Date( timestamp ).toISOString()}' };\n`;
+        this.contentFile = `window.AppInfo = { name: '${ this.pkg.name }', version: '${ this.pkg.version }', build: '${ timestamp }', dateBuild: '${ new Date( timestamp ).toISOString() }' };\n`;
         logger.done( 'AppInfo ok' );
         logger.separator();
     }
 
     writeAppInfo () {
         logger.info( 'Writing content into file AppInfo.js' );
-        fs.writeFile( './src/js/AppInfo.js', `${this.contentFile}`, err => {
+        fs.writeFile( './src/js/app-info.js', `${ this.contentFile }`, err => {
             if ( err ) {
                 logger.error( err );
                 return false;
