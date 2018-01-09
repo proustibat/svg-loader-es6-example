@@ -7,7 +7,8 @@ module.exports = {
     entry: [
         'babel-polyfill',
         './src/js/main.js',
-        './src/index.html'
+        './src/index.html',
+        './src/dashboard.html'
     ],
     output: {
         filename: 'js/[name].[hash].js',
@@ -49,7 +50,13 @@ module.exports = {
             configFile: '.stylelintrc'
         } ),
         new HtmlWebpackPlugin( {
+            filename: 'index.html',
             template: './src/index.html',
+            hash: true
+        } ),
+        new HtmlWebpackPlugin( {
+            filename: 'dashboard.html',
+            template: './src/dashboard.html',
             hash: true
         } ),
         new CleanWebpackPlugin( [ 'dist' ] )

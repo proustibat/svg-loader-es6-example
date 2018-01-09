@@ -1,20 +1,22 @@
-@import 'themeColors';
+@import 'theme-colors';
 $theme-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headband-height: 2.6rem;
+$page-height-remove: calc(100vh - 9.2rem);
 
 body {
   font-family: $theme-font;
-  background-color: $themeColor-Light;
-  color: $themeColor-Dark;
+  background-color: $color-light;
+  color: $color-dark;
 }
 
 h1 {
-  height: 3rem;
+  height: $headband-height;
   font-size: 2rem;
   text-align: center;
   vertical-align: middle;
-  line-height: 3rem;
+  line-height: $headband-height;
   padding: 1rem 0;
-  background: #f5f5f5;
+  background: $color-headband;
   font-weight: bold;
 }
 
@@ -23,7 +25,9 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-height: calc(100vh - 5rem);
+  min-height: $page-height-remove;
+  padding: 0;
+  margin: 0;
 
   section {
     display: flex;
@@ -101,4 +105,14 @@ h1 {
   &.empty .btn-reset {
     display: flex;
   }
+}
+
+footer {
+  height: $headband-height;
+  background: $color-headband;
+  padding: 1rem 0;
+  line-height: $headband-height;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-around;
 }

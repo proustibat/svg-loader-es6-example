@@ -13,7 +13,9 @@ if ( process.env.NODE_ENV !== 'production' ) {
 }
 
 document.ready().then( () => {
-    /* eslint-disable */
-    new App();
-    /* eslint-enable */
+    if ( document.querySelector( '.js-tag-app' ) ) {
+        /* eslint-disable */
+        new App();
+        /* eslint-enable */
+    }
 } );
