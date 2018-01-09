@@ -24,8 +24,7 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - yarn build
-  - bash sonar.sh
+  - yarn build && bash sonar.sh
 
 # Here we want to check out where we are.
 # We only want to update Github Pages if we're building
