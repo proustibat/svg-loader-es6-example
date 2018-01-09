@@ -1,5 +1,7 @@
 # SVG Loader Vanilla ES6 - Example 
-Usage example for [SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)
+Usage example for **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)**
+
+------
 
 [![Build Status](https://travis-ci.org/proustibat/svg-loader-es6-example.svg?branch=master)](https://travis-ci.org/proustibat/svg-loader-es6-example) 
 [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) 
@@ -7,6 +9,7 @@ Usage example for [SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)
 <a href='https://david-dm.org/proustibat/svg-loader-es6-example?type=dev'><img src='https://david-dm.org/proustibat/svg-loader-es6-example/dev-status.svg' alt='devDependencies Status'/>
 <a href='https://github.com/proustibat/svg-loader-es6-example/blob/master/LICENSE.md'><img src='https://img.shields.io/github/license/proustibat/svg-loader-es6-example.svg' alt='GitHub license'/></a>
 
+------
 
 ## Installation
 ```
@@ -24,6 +27,9 @@ yarn start
 ```
 yarn build
 ```
+
+## Live Demo
+[https://proustibat.github.io/svg-loader-es6-example/](https://proustibat.github.io/svg-loader-es6-example/)
 
 ------
 
@@ -46,7 +52,6 @@ yarn build
 [![Code Climate Issues](https://img.shields.io/codeclimate/issues/github/proustibat/svg-loader-es6-example.svg)](https://codeclimate.com/github/proustibat/svg-loader-es6-example/issues) 
 [![Code Climate Coverage](https://img.shields.io/codeclimate/c/proustibat/svg-loader-es6-example.svg)](https://codeclimate.com/github/proustibat/svg-loader-es6-example)
 
- 
 ### Sonarcloud
 
 #### Complexity
@@ -109,8 +114,9 @@ Issues in this domain mark code where you will get behavior other than what was 
 [![Security remediation effort	](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=security_remediation_effort)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=security_remediation_effort)
 [![Security Rating](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=security_rating)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=security_rating)
 
+------
 
-## Misc
+## Miscellaneous
 
 [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example) 
 [![GitHub language count](https://img.shields.io/github/languages/count/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example) 
