@@ -1,0 +1,49 @@
+{
+  "loadersOptions": [
+    { "containerId": "example-1" },
+    {
+      "containerId": "example-2",
+      "size": 10,
+      "radius": 5,
+      "duration": 1800,
+      "maxOpacity": 1,
+      "minOpacity": 0.4,
+      "margin": 3,
+      "nbRects": 5,
+      "fill": "#0B72FF"
+    },
+    {
+      "containerId": "example-3",
+      "size": 20,
+      "radius": 5,
+      "margin": 2,
+      "nbRects": 6,
+      "fill": "red",
+      "duration": 900,
+      "maxOpacity": 0.6,
+      "minOpacity": 0.1
+    },
+    {
+      "containerId": "example-4",
+      "size": 12,
+      "radius": 2,
+      "margin": 3,
+      "nbRects": 4,
+      "fill": "green",
+      "duration": 1000,
+      "maxOpacity": 0.8,
+      "minOpacity": 0.2
+    },
+    {
+      "containerId": "example-5",
+      "size": 4,
+      "radius": 2,
+      "margin": 1,
+      "nbRects": 5,
+      "fill": "purple",
+      "duration": 1000,
+      "maxOpacity": 1,
+      "minOpacity": 0
+    }
+  ]
+}

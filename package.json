@@ -1,0 +1,50 @@
+{
+  "name": "svg-loader-es6-example",
+  "version": "1.0.0",
+  "description": "Example for svg-loader-es6 package",
+  "main": "src/js/main.js",
+  "repository": "git@github.com:proustibat/svg-loader-es6-example.git",
+  "author": "Proustibat <proustibat@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "reset-css": "2.2.1",
+    "svg-loader-es6": "git+https://git@github.com/proustibat/svg-loader-es6.git"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.2.1",
+    "babel-loader": "7.1.2",
+    "babel-polyfill": "6.26.0",
+    "babel-preset-latest": "6.24.1",
+    "clean-webpack-plugin": "0.1.17",
+    "css-loader": "0.28.8",
+    "eslint": "4.15.0",
+    "eslint-config-eslint": "4.0.0",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-loader": "1.9.0",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.6",
+    "html-webpack-plugin": "2.30.1",
+    "node-sass": "4.7.2",
+    "path": "0.12.7",
+    "raw-loader": "0.5.1",
+    "sass-loader": "6.0.6",
+    "standard": "10.0.3",
+    "style-loader": "0.19.1",
+    "stylelint": "8.4.0",
+    "stylelint-config-standard": "18.0.0",
+    "stylelint-webpack-plugin": "0.9.0",
+    "uglifyjs-webpack-plugin": "1.1.6",
+    "url-loader": "0.6.2",
+    "util": "0.10.3",
+    "webpack": "3.10.0",
+    "webpack-dev-server": "2.9.7",
+    "webpack-merge": "4.1.1"
+  },
+  "scripts": {
+    "start": "node build.js && yarn lint:js && yarn lint:css && webpack-dev-server --open  --config webpack.dev.js",
+    "build": "node build.js && yarn lint:js && yarn lint:css && webpack --config webpack.prod.js",
+    "lint:js": "eslint . --ext .js -c .eslintrc.js --fix",
+    "lint:css": "stylelint 'src/styles/*.scss' --color --fix"
+  }
+}
