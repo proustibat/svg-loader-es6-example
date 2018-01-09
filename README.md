@@ -19,6 +19,7 @@ If you just wanna use the lib on your project, please read the doc of [the SVG L
 
 ------
 
+## Working on this demo
 
 ### Installation
 ```
@@ -38,6 +39,13 @@ yarn build
 ```
 
 ------
+
+## Contributing
+
+- Issue Tracker: [https://github.com/proustibat/svg-loader-es6-example/issues](https://github.com/proustibat/svg-loader-es6-example/issues)
+- Source Code: [https://github.com/proustibat/svg-loader-es6-example](https://github.com/proustibat/svg-loader-es6-example)
+- Pull Requests: [https://github.com/proustibat/svg-loader-es6-example/pulls](https://github.com/proustibat/svg-loader-es6-example/pulls)
+
 
 ### Code Quality
 
