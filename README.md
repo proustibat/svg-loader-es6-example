@@ -1,5 +1,8 @@
 # SVG Loader Vanilla ES6 - Example 
-Usage example for **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)**
+
+This repo is a demo to show how to use **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)**.
+
+If you just wanna use the lib on your project, please read the doc of [the SVG Loader ES6](https://github.com/proustibat/svg-loader-es6/blob/master/README.md)
 
 ------
 
@@ -11,50 +14,53 @@ Usage example for **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es
 
 ------
 
-## Installation
-```
-yarn install
-```
-
-
-## Watch
-```
-yarn start
-```
-
-
-## Build
-```
-yarn build
-```
-
 ## Live Demo
 [https://proustibat.github.io/svg-loader-es6-example/](https://proustibat.github.io/svg-loader-es6-example/)
 
 ------
 
-## Code Quality
 
-### Linting
+### Installation
+```
+yarn install
+```
 
-#### Eslint
+
+### Watch
+```
+yarn start
+```
+
+
+### Build
+```
+yarn build
+```
+
+------
+
+### Code Quality
+
+#### Linting
+
+##### Eslint
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-#### Stylelint
+##### Stylelint
 
 [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 
 
-### Code Climate
+#### Code Climate
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/44d6de4af0a54555f1ef/maintainability)](https://codeclimate.com/github/proustibat/svg-loader-es6-example/maintainability)
 [![Code Climate Issues](https://img.shields.io/codeclimate/issues/github/proustibat/svg-loader-es6-example.svg)](https://codeclimate.com/github/proustibat/svg-loader-es6-example/issues) 
 [![Code Climate Coverage](https://img.shields.io/codeclimate/c/proustibat/svg-loader-es6-example.svg)](https://codeclimate.com/github/proustibat/svg-loader-es6-example)
 
-### Sonarcloud
+#### Sonarcloud
 
-#### Complexity
+##### Complexity
 How simple or complicated the control flow of the application is. 
 
 
@@ -63,7 +69,7 @@ How simple or complicated the control flow of the application is.
 [![Cognitive Complexity](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=cognitive_complexity)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=cognitive_complexity)
 
 
-#### Documentation & sizes
+##### Documentation & sizes
 [![Lines](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=lines)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=lines) 
 [![Lines of code](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=ncloc)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=ncloc) 
 [![Comment lines](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=comment_lines)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=comment_lines) 
@@ -75,32 +81,32 @@ How simple or complicated the control flow of the application is.
 [![Functions](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=functions)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=functions)
 
 
-#### Duplications
+##### Duplications
 [![Duplicated blocks](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=duplicated_blocks)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=duplicated_blocks) 
 [![Duplicated lines](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=duplicated_lines)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=duplicated_lines)
 
 
-#### Issues
+##### Issues
 [![Open issues](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=open_issues)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=open_issues)
 [![Confirmed issues](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=confirmed_issues)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=confirmed_issues)
 [![Won't fix issues](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=wont_fix_issues)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=wont_fix_issues) 
 
 
-#### Maintainability
+##### Maintainability
 Issues in this domain mark code that will be more difficult to update competently than it should
 
 [![Code smells](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=code_smells)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=code_smells)
 [![SQALE Rating](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=sqale_rating)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=sqale_rating)
 
 
-#### Technical debt
+##### Technical debt
 Effort to fix all maintainability issues. The measure is stored in minutes. An 8-hour day is assumed when values are shown in days. (The value of the cost to develop a line of code is 0.06 days)
 
 [![Technical debt](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=sqale_index)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=sqale_index) 
 [![Technical debt ratio](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=sqale_debt_ratio)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=sqale_debt_ratio)
 
 
-#### Reliability
+##### Reliability
 Issues in this domain mark code where you will get behavior other than what was expected.
 
 [![Bugs](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=bugs)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=bugs)
@@ -108,7 +114,7 @@ Issues in this domain mark code where you will get behavior other than what was 
 [![Reliability Rating](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=reliability_rating)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=reliability_rating)
 
 
-#### Security
+##### Security
 
 [![Vulnerabilities](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=vulnerabilities)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=vulnerabilities)
 [![Security remediation effort	](https://sonarcloud.io/api/badges/measure?key=prstbt.svg-loader-es6-example&metric=security_remediation_effort)](https://sonarcloud.io/component_measures?id=prstbt.svg-loader-es6-example&metric=security_remediation_effort)
@@ -116,7 +122,7 @@ Issues in this domain mark code where you will get behavior other than what was 
 
 ------
 
-## Miscellaneous
+### Miscellaneous
 
 [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example) 
 [![GitHub language count](https://img.shields.io/github/languages/count/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example) 
