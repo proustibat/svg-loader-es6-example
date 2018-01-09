@@ -4,10 +4,6 @@ env:
     - GITHUB_REPO: "proustibat/svg-loader-es6-example"
     - secure: "qz3TXn8DVYmjSKp7gXHJP1hqmJSNFgi5bxaqrm5kO5/JWM6ANHvj+keEh2S5dRmtYFBtRTxycGQs/lLnOmM0uMWvoQA5rccs36cKmy0ey8VfFod64EiA+0WCLLQSm5ZUbBPtEcEdU5DzQQJVd6hLCiuGQT73GcRSSFnggI4/l6Fw+Jy88KQbZwLuq8nRB7abTJAqughNatJrqUXydNtTWFanY/NJhDQjAPgD9Ettajf202T1O9OOTMgfGALIwNEvjGpeGj4tz1/yPbleWYippOtZpNQrINGcZRNVGkFDYf/f1PwVx4q4OIwg9VtoibKiRkCigKgDRDkOXCKdR7uXcAxTA+X7VDNAhHZMCvTE1z/zNdMWCwl3JlnUyPa5yEQKnqT82WKJp0ie4ifMtuyy/+ONEc/BQr5RZIw+fike8JbTQ+Ywg6PHp/XCBvqaFEPG7WcpAJlIaQP30P3frljR6zfWT9avSn35KzF31mw/Enfs2ttnSLGrztkIFDKDb8i7iyJOCa1oq5jvG73k/frRqFaWPkQfDIJimAMj/9ZHh8ZexLStvZ7mPywRc3MJSyZll0O9WoLASblEXlK537HBbXypX8hqzzgKPIVUjBobsuD/kyD37VJVD25501MuGtc93cj+mnxzh61pUJXxI2HGqKUHnZdwcSO7aOpgbG5ngyI="
 
-branches:
-  only:
-  - usage-example
-
 language: node_js
 
 node_js: '8'
