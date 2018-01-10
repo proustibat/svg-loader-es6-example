@@ -44,6 +44,17 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+/**
+https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+// usage
+.my-box {
+  padding: 10px;
+
+  @include for-size(desktop-up) {
+    padding: 20px;
+  }
+}
+ */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fafafa;
@@ -146,30 +157,41 @@ body {
   padding: 0;
   margin: 0 auto;
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 6rem);
   justify-content: center;
   align-items: center;
-  max-width: 700px; }
-  .page-generator #loader-example {
-    background: #fafafa;
-    min-height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    border: 1px solid #272822; }
+  max-width: 900px;
+  flex-direction: row;
+  overflow: hidden; }
+  @media (max-width: 599px) {
+    .page-generator {
+      flex-direction: column; } }
   .page-generator .result {
+    width: 50%;
     min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; }
+    @media (max-width: 599px) {
+      .page-generator .result {
+        width: auto; } }
+    .page-generator .result #loader-example {
+      background: #fafafa;
+      min-height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      border: 1px solid #272822; }
   .page-generator .form {
     background: #ebebeb;
     min-height: 350px;
-    min-width: 300px;
-    width: 100%;
+    width: 50%;
     margin: 1rem;
     color: #272822; }
+    @media (max-width: 599px) {
+      .page-generator .form {
+        width: auto; } }
     .page-generator .form h2 {
       margin: 1rem 1rem 0 1rem;
       font-size: 1.4rem;
@@ -200,9 +222,13 @@ body {
       height: 25px;
       cursor: pointer;
       transition: filter 200ms ease;
-      min-width: 100px; }
-      .page-generator .form button:hover {
-        filter: invert(100%); }
+      min-width: 100px;
+      outline: none; }
+      @media (hover: hover) {
+        .page-generator .form button {
+          /* Primary Input responds to hover fully, such as a mouse or a Nintendo Wii controller */ }
+          .page-generator .form button:hover {
+            filter: invert(100%); } }
     .page-generator .form input {
       width: 50%; }
     .page-generator .form input[type="range"] {
