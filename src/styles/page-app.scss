@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-height: $page-height-remove;
+  min-height: calc(100vh - 6rem);
   padding: 0;
   margin: 0;
 

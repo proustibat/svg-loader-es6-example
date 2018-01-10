@@ -2,35 +2,49 @@
   padding: 0;
   margin: 0 auto;
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 6rem);
   justify-content: center;
   align-items: center;
-  max-width: 700px;
+  max-width: 900px;
+  flex-direction: row;
+  overflow: hidden;
 
-  #loader-example {
-    background: $color-light;
-    min-height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    border: 1px solid $color-dark;
+  @include for-size(phone-only) {
+    flex-direction: column;
   }
 
   .result {
+    width: 50%;
     min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include for-size(phone-only) {
+      width: auto;
+    }
+
+    #loader-example {
+      background: $color-light;
+      min-height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      border: 1px solid $color-dark;
+    }
   }
 
   .form {
     background: $light-grey;
     min-height: 350px;
-    min-width: 300px;
-    width: 100%;
+    width: 50%;
     margin: 1rem;
     color: $color-dark;
+
+    @include for-size(phone-only) {
+      width: auto;
+    }
 
     h2 {
       margin: 1rem 1rem 0 1rem;
@@ -71,9 +85,13 @@
       cursor: pointer;
       transition: filter 200ms ease;
       min-width: 100px;
+      outline: none;
 
-      &:hover {
-        filter: invert(100%);
+      @media (hover: hover) {
+        /* Primary Input responds to hover fully, such as a mouse or a Nintendo Wii controller */
+        &:hover {
+          filter: invert(100%);
+        }
       }
     }
 
