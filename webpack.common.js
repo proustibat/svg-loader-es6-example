@@ -3,12 +3,17 @@ const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 
+const pages = [
+    'index.html',
+    'dashboard.html',
+    'generator.html'
+];
+
 module.exports = {
     entry: [
         'babel-polyfill',
         './src/js/main.js',
-        './src/index.html',
-        './src/dashboard.html'
+        ...Object.values( pages ).map( page => `./src/${ page }` )
     ],
     output: {
         filename: 'js/[name].[hash].js',
@@ -49,15 +54,12 @@ module.exports = {
         new StyleLintPlugin( {
             configFile: '.stylelintrc'
         } ),
-        new HtmlWebpackPlugin( {
-            filename: 'index.html',
-            template: './src/index.html',
-            hash: true
-        } ),
-        new HtmlWebpackPlugin( {
-            filename: 'dashboard.html',
-            template: './src/dashboard.html',
-            hash: true
+        ...Object.values( pages ).map( page => {
+            return new HtmlWebpackPlugin( {
+                filename: page,
+                template: `./src/${ page }`,
+                hash: true
+            } );
         } ),
         new CleanWebpackPlugin( [ 'dist' ] )
     ],

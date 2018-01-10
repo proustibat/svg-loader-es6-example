@@ -1,7 +1,7 @@
 @import 'theme-colors';
 $theme-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$headband-height: 2.6rem;
-$page-height-remove: calc(100vh - 9.2rem);
+$headband-height: 4rem;
+$page-height-remove: calc(100vh - 6rem);
 
 body {
   font-family: $theme-font;
@@ -9,15 +9,34 @@ body {
   color: $color-dark;
 }
 
-h1 {
-  height: $headband-height;
-  font-size: 2rem;
-  text-align: center;
-  vertical-align: middle;
-  line-height: $headband-height;
-  padding: 1rem 0;
+.header {
   background: $color-headband;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  height: $headband-height;
+  justify-content: space-between;
+  padding: 1rem 0;
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  .menu {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    font-size: 0.8rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-dark;
+  }
 }
 
 .page {
@@ -105,14 +124,4 @@ h1 {
   &.empty .btn-reset {
     display: flex;
   }
-}
-
-footer {
-  height: $headband-height;
-  background: $color-headband;
-  padding: 1rem 0;
-  line-height: $headband-height;
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: space-around;
 }
