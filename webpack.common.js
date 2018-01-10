@@ -2,7 +2,6 @@ const path = require( 'path' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
-const HtmlHeaderPlugin = require( './html-header-plugin' );
 
 const pagesList = [
     {
@@ -18,6 +17,28 @@ const pagesList = [
         filename: 'generator'
     }
 ];
+
+const getHtmlWebpackPluginInstances = () => {
+    return Object.values( pagesList ).map( page => {
+        const pageTitle = `SVG Loader ES6 - ${ page.title }`;
+        const header = `
+            <header class="header">
+                <h1 class="title">${ pageTitle }</h1>
+                <ul class="menu">
+                    ${ pagesList.map( pageLink => `<li class="${ pageLink.filename === page.filename ? 'isActive' : '' }"><a href="${ pageLink.filename }.html">${ pageLink.title }</a></li>` ).join( '' ) }
+                    <li><a href="https://github.com/proustibat/svg-loader-es6" target="_blank">Install</a></li>
+                </ul>
+            </header>`;
+        return new HtmlWebpackPlugin( {
+            filename: `${ page.filename }.html`,
+            template: `./src/${ page.filename }.ejs`,
+            title: pageTitle,
+            hash: true,
+            favicon: './src/favicon.ico',
+            header: header
+        } );
+    } );
+};
 
 module.exports = {
     entry: [
@@ -70,16 +91,7 @@ module.exports = {
         new StyleLintPlugin( {
             configFile: '.stylelintrc'
         } ),
-        ...Object.values( pagesList ).map( page => {
-            return new HtmlWebpackPlugin( {
-                filename: `${ page.filename }.html`,
-                template: `./src/${ page.filename }.ejs`,
-                title: `SVG Loader ES6 - ${ page.title }`,
-                hash: true,
-                favicon: './src/favicon.ico'
-            } );
-        } ),
-        new HtmlHeaderPlugin( pagesList ),
+        ...getHtmlWebpackPluginInstances(),
         new CleanWebpackPlugin( [ 'dist' ] )
     ],
     devtool: 'source-map'

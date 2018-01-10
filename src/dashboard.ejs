@@ -10,7 +10,8 @@
 </head>
 <body>
 
-<!-- Header here by webpack -->
+<!-- Header here by webpack and htmlWebpackPlugin -->
+<%= htmlWebpackPlugin.options.header %>
 
 <div class="page">
     <h2><%= htmlWebpackPlugin.options.title %></h2>

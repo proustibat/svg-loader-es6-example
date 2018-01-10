@@ -37,6 +37,10 @@ body {
     text-decoration: none;
     color: $color-dark;
   }
+
+  .isActive {
+    border-bottom: 2px solid;
+  }
 }
 
 .page {
