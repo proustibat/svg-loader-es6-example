@@ -2,18 +2,28 @@ const path = require( 'path' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
+const HtmlHeaderPlugin = require( './html-header-plugin' );
 
-const pages = [
-    'index.html',
-    'dashboard.html',
-    'generator.html'
+const pagesList = [
+    {
+        title: 'Home',
+        filename: 'index'
+    },
+    {
+        title: 'Dashboard',
+        filename: 'dashboard'
+    },
+    {
+        title: 'Generator',
+        filename: 'generator'
+    }
 ];
 
 module.exports = {
     entry: [
         'babel-polyfill',
         './src/js/main.js',
-        ...Object.values( pages ).map( page => `./src/${ page }` )
+        ...Object.values( pagesList ).map( page => `./src/${ page.filename }.ejs` )
     ],
     output: {
         filename: 'js/[name].[hash].js',
@@ -22,9 +32,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.html$/,
+                test: /\.(html)$/,
                 use: [
                     'raw-loader'
+                ]
+            },
+            {
+                test: /\.(ejs)$/,
+                use: [
+                    'underscore-template-loader'
                 ]
             },
             {
@@ -54,13 +70,16 @@ module.exports = {
         new StyleLintPlugin( {
             configFile: '.stylelintrc'
         } ),
-        ...Object.values( pages ).map( page => {
+        ...Object.values( pagesList ).map( page => {
             return new HtmlWebpackPlugin( {
-                filename: page,
-                template: `./src/${ page }`,
-                hash: true
+                filename: `${ page.filename }.html`,
+                template: `./src/${ page.filename }.ejs`,
+                title: `SVG Loader ES6 - ${ page.title }`,
+                hash: true,
+                favicon: './src/favicon.ico'
             } );
         } ),
+        new HtmlHeaderPlugin( pagesList ),
         new CleanWebpackPlugin( [ 'dist' ] )
     ],
     devtool: 'source-map'
