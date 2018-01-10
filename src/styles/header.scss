@@ -1,0 +1,33 @@
+.header {
+  background: $color-headband;
+  display: flex;
+  flex-direction: column;
+  height: $headband-height;
+  justify-content: space-between;
+  padding: 1rem 0;
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    font-size: 1.8rem;
+  }
+
+  .menu {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    font-size: 0.8rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-dark;
+  }
+
+  .isActive {
+    border-bottom: 2px solid;
+  }
+}

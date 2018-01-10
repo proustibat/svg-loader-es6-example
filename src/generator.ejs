@@ -13,9 +13,56 @@
 <!-- Header here by webpack and htmlWebpackPlugin -->
 <%= htmlWebpackPlugin.options.header %>
 
-<div class="page">
-    <h2><%= htmlWebpackPlugin.options.title %></h2>
+<div class="page page-generator" data-page-slug="Generator">
+    <div class="form">
+        <h2>Configuration</h2>
+        <form>
+            <label for="containerId">containerId</label>
+            <input id="containerId" name="containerId" type="text" placeholder="loader-example" disabled />
 
+            <label for="svgId">svgId</label>
+            <input id="svgId" name="svgId" type="text" placeholder="loader" />
+
+            <label for="size">size</label>
+            <input id="size" name="size" type="range" value="15" min="1" max="50">
+            <span class="badge">15</span>
+
+            <label for="radius">radius</label>
+            <input id="radius" name="radius" type="number" value="2" min="0" max="50">
+
+            <label for="duration">duration</label>
+            <input id="duration" name="duration" type="number" value="1000" min="0" max="6000" step="25">
+
+            <label for="minOpacity">minOpacity</label>
+            <input id="minOpacity" name="minOpacity" type="range" value="0.25" min="0" max="1" step="0.01">
+            <span class="badge">0.25</span>
+
+            <label for="maxOpacity">maxOpacity</label>
+            <input id="maxOpacity" name="maxOpacity" type="range" value="0.75" min="0" max="1" step="0.01">
+            <span class="badge">0.75</span>
+
+            <label for="margin">margin</label>
+            <input id="margin" name="margin" type="number" value="2" min="0">
+
+            <label for="nbRects">nbRects</label>
+            <input id="nbRects" name="nbRects" type="number" value="3" min="1">
+
+
+            <div class="buttons">
+                <button type="reset">Reset</button>
+                <button type="submit">Run this config</button>
+            </div>
+        </form>
+    </div>
+    <div class="result">
+        <div id="loader-example"></div>
+        <div class="code-source">
+            <p>Javascript:</p>
+            <div class="source-js"></div>
+            <p>HTML:</p>
+            <div class="source-html"></div>
+        </div>
+    </div>
 
 </div>
 </body>

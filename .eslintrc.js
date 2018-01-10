@@ -44,6 +44,7 @@ module.exports ={
         'comma-dangle': [ 'error', 'only-multiline' ],
         'template-curly-spacing': [ 'error', 'always' ],
         'brace-style': [ 'error', 'stroustrup', { 'allowSingleLine': true } ],
-        'no-trailing-spaces': [ 'error', { 'skipBlankLines': true } ]
+        'no-trailing-spaces': [ 'error', { 'skipBlankLines': true } ],
+        'no-new': [ 'off' ]
     }
 };

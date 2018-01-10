@@ -2,14 +2,13 @@ import * as Data from '../assets/data';
 import { SVGLoader } from 'svg-loader-es6';
 import { modal as TingleModal } from 'tingle.js';
 import 'tingle.js/src/tingle.css';
-import '../vendors/prismjs/prism.css';
-import '../vendors/prismjs/prism';
 
 export default class App {
-    constructor () {
-        console.log( 'Hello App' );
+    constructor ( element ) {
+        console.log( 'Hello App ', element );
         this.loadersOptions = Data.loadersOptions;
-        this.page = document.querySelector( '.page' );
+        // this.page = document.querySelector( '.page' );
+        this.page = element;
         this.loaders = this.createLoaders();
         this.listenDom();
         this.listenReset();
