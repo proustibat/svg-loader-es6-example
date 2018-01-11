@@ -9,12 +9,12 @@ const pagesList = [
         filename: 'index'
     },
     {
-        title: 'Dashboard',
-        filename: 'dashboard'
-    },
-    {
         title: 'Generator',
         filename: 'generator'
+    },
+    {
+        title: 'Dashboard',
+        filename: 'dashboard'
     }
 ];
 

@@ -1,5 +1,6 @@
 import { SVGLoader, defaultOptions as SVGLoaderDefaultOptions } from 'svg-loader-es6';
 import '../vendors/jscolor';
+// import { default as Clipboard } from 'clipboard';
 
 export default class Generator {
     constructor ( element ) {
@@ -46,9 +47,11 @@ export default class Generator {
             } );
         } );
 
-        this.el.querySelector( '.form #fill' ).defaultValue = SVGLoaderDefaultOptions.fill.replace( '#', '' );
-
-        console.log( this.el.querySelector( '.form #fill' ).defaultValue );
+        // Init default values for each inputs
+        const form = this.el.querySelector( '.form' );
+        Object.keys( SVGLoaderDefaultOptions )
+            .filter( key => key !== 'containerId' )
+            .forEach( key => { form.querySelector( `#${ key }` ).defaultValue = key === 'fill' ? SVGLoaderDefaultOptions.fill.replace( '#', '' ) : SVGLoaderDefaultOptions[ key ]; } );
 
         // Trigger submit to create default loader with default values of the form
         submitBtn.click();
