@@ -23,20 +23,30 @@ export default class Generator {
 
         // reset button
         const resetBtn = this.el.querySelector( 'button[type="reset"]' );
-        resetBtn.addEventListener( 'click', e => {
+        resetBtn && resetBtn.addEventListener( 'click', e => {
             e.preventDefault();
             e.stopPropagation();
+
+            // reset form
             e.currentTarget.form.reset();
+
+            // reset badge for range inputs
             const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
             rangeInputs.forEach( input => {
                 input.nextElementSibling.innerHTML = input.defaultValue;
             } );
+
+            // reset color picker
+            const pickerColorInput = this.el.querySelector( '#fill' );
+            pickerColorInput.jscolor && pickerColorInput.jscolor.importColor();
+
+            // trigger a submit to create a nre loader with default options
             this.el.querySelector( 'button[type="submit"]' ).click();
         } );
 
         // submit button
         const submitBtn = this.el.querySelector( 'button[type="submit"]' );
-        submitBtn.addEventListener( 'click', e => {
+        submitBtn && submitBtn.addEventListener( 'click', e => {
             e.preventDefault();
 
             // If submitted directly by user get form values else default values
@@ -47,11 +57,16 @@ export default class Generator {
 
         // Inputs range changes
         const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
-        rangeInputs.forEach( input => {
+        rangeInputs && rangeInputs.forEach( input => {
             input.addEventListener( 'input', e => {
                 e.currentTarget.nextElementSibling.innerHTML = e.currentTarget.value;
             } );
         } );
+
+        if ( !( rangeInputs && submitBtn ) ) {
+            console.warn( 'Oops, it seems the dom is not valid!' );
+            return false;
+        }
 
         // Init default values for each inputs
         const form = this.el.querySelector( '.form' );

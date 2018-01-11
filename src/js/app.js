@@ -48,7 +48,7 @@ export default class App {
             buttonsEl.appendChild( btnDestroyEl );
             sectionEl.appendChild( exampleEl );
             sectionEl.appendChild( buttonsEl );
-            this.page.appendChild( sectionEl );
+            this.page.querySelector( '.sections' ).appendChild( sectionEl );
         }
     }
 

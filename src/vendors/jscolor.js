@@ -39,7 +39,6 @@ module.exports = (function () {
             }
         },
 
-
         tryInstallOnElements : function (elms, className) {
             var matchClass = new RegExp('(^|\\s)(' + className + ')(\\s*(\\{[^}]*\\})|\\s|$)', 'i');
 
@@ -74,7 +73,6 @@ module.exports = (function () {
                 }
             }
         },
-
 
         isColorAttrSupported : (function () {
             var elm = document.createElement('input');
@@ -980,7 +978,6 @@ module.exports = (function () {
         //
 
         jscolor : function (targetElement, options) {
-
             // General options
             //
             this.value = null; // initial HEX color. To change it later, use methods fromString(), fromHSV() and fromRGB()
@@ -1843,7 +1840,18 @@ module.exports = (function () {
     return {
         setClassName: ( className = 'jscolor' ) => jsc.jscolor.lookupClass = className,
         enable: jsc.register,
-        disable: () => jsc.jscolor.lookupClass = null
+        disable: () => jsc.jscolor.lookupClass = null,
+        // reset: () => {
+        //     if ( jsc.jscolor.lookupClass ) {
+        //         const inputElms = document.getElementsByTagName('input');
+        //         const buttonElms = document.getElementsByTagName('button');
+        //         [...inputElms, ...buttonElms].forEach( el => {
+        //             if ( el.jscolor ) {
+        //                 el.jscolor.importColor();
+        //             }
+        //         } );
+        //     }
+        // }
     };
 
 })();

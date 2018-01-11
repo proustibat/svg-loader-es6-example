@@ -6,36 +6,125 @@
   justify-content: center;
   align-items: center;
   max-width: 900px;
-  flex-direction: row;
+  flex-direction: column;
   overflow: hidden;
 
   @include for-size(phone-only) {
+    //flex-direction: column;
+  }
+
+  h2 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
     flex-direction: column;
+    min-height: calc(100vh - 7rem);
+    //justify-content: space-around;
+    //justify-content: flex-start;
+  }
+
+  .sections {
+    background: $light-grey;
+    padding: 2rem;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: row;
+
+    @include for-size(phone-only) {
+      flex-direction: column;
+    }
+  }
+
+  .form {
+    color: $light-grey;
+    width: 50%;
+    margin-right: 2rem;
+    background: $color-dark;
+
+    @include for-size(phone-only) {
+      margin: 0 0 2rem;
+    }
+
+    h2 {
+      margin: 1rem 1rem 0 1rem;
+      font-size: 1.4rem;
+      border-bottom: 1px solid $color-light;
+      padding: 0 0 1rem 0;
+    }
+
+    form {
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    label {
+      display: inline-block;
+      margin: 0.5rem 0 0;
+      width: 50%;
+    }
+
+    .buttons {
+      margin: 1rem 0 0;
+      background: $color-light;
+      min-height: 4rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    button {
+      background: $color-dark;
+      border: none;
+      color: $color-light;
+      border-radius: 5px;
+      height: 25px;
+      cursor: pointer;
+      transition: filter 200ms ease;
+      min-width: 100px;
+      outline: none;
+
+      @media (hover: hover) {
+        /* Primary Input responds to hover fully, such as a mouse or a Nintendo Wii controller */
+        &:hover {
+          filter: invert(100%);
+        }
+      }
+    }
+
+    input {
+      width: 50%;
+    }
+
+    input[type="range"] {
+      width: 38%;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      width: 10%;
+      text-align: center;
+    }
   }
 
   .result {
     width: 50%;
-    min-height: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-    pre[class*="language-"] {
-      margin: 0;
-    }
-
-    @include for-size(phone-only) {
-      width: auto;
-    }
 
     #loader-example {
       background: $color-light;
-      min-height: 5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1rem;
       border: 1px solid $color-dark;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      text-align: center;
+      overflow: hidden;
     }
 
     .code-block-container {
@@ -104,78 +193,10 @@
     }
   }
 
-  .form {
-    background: $light-grey;
-    min-height: 350px;
-    width: 50%;
-    margin: 1rem;
-    color: $color-dark;
-
-    @include for-size(phone-only) {
+  @include for-size(phone-only) {
+    .form,
+    .result {
       width: auto;
-    }
-
-    h2 {
-      margin: 1rem 1rem 0 1rem;
-      font-size: 1.4rem;
-      border-bottom: 1px solid $color-light;
-      padding: 0 0 1rem 0;
-    }
-
-    form {
-      padding: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    label {
-      display: inline-block;
-      margin: 0.5rem 0 0;
-      width: 50%;
-    }
-
-    .buttons {
-      margin: 1rem 0 0;
-      background: $color-light;
-      min-height: 4rem;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    button {
-      background: $color-dark;
-      border: none;
-      color: $color-light;
-      border-radius: 5px;
-      height: 25px;
-      cursor: pointer;
-      transition: filter 200ms ease;
-      min-width: 100px;
-      outline: none;
-
-      @media (hover: hover) {
-        /* Primary Input responds to hover fully, such as a mouse or a Nintendo Wii controller */
-        &:hover {
-          filter: invert(100%);
-        }
-      }
-    }
-
-    input {
-      width: 50%;
-    }
-
-    input[type="range"] {
-      width: 38%;
-    }
-
-    .badge {
-      font-size: 0.8rem;
-      width: 10%;
-      text-align: center;
     }
   }
 }

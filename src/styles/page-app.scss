@@ -1,25 +1,60 @@
 .page-app {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  min-height: calc(100vh - 7rem);
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  display: flex;
+  min-height: calc(100vh - 7rem);
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  flex-direction: column;
+  overflow: hidden;
 
-  section {
+  h2 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    min-height: calc(100vh - 7rem);
+    //justify-content: space-around;
+    justify-content: flex-start;
+  }
+
+  .sections {
+    background: $light-grey;
+    padding: 2rem;
+    border-radius: 0.2rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+    background: $color-light;
+    padding: 1rem;
+    display: flex;
     align-items: center;
+    justify-content: space-around;
+
+    @include for-size(phone-only) {
+      padding: 2rem 1rem;
+      flex-direction: column;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   .example {
-    width: 100%;
-    height: 30px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: 100%;
+
+    @include for-size(phone-only) {
+      margin-bottom: 1rem;
+    }
   }
 
   .buttons {
@@ -27,11 +62,10 @@
   }
 
   button {
-    display: block;
+    display: inline-block;
     margin: 5px auto 0;
     width: 70px;
     cursor: pointer;
-    margin-bottom: 20px;
     text-decoration: none;
     border: 1px solid #2590ae;
     border-radius: 3px;
@@ -72,14 +106,20 @@
     border-radius: 50%;
     display: none;
     flex-direction: column;
-    font-size: 2.2rem;
-    height: 150px;
+    font-size: 1.8rem;
+    height: 100px;
     justify-content: center;
     position: relative;
-    width: 150px;
+    width: 100px;
   }
 
-  &.empty .btn-reset {
-    display: flex;
+  &.empty {
+    .btn-reset {
+      display: flex;
+    }
+
+    .sections {
+      display: none;
+    }
   }
 }
