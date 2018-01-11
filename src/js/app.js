@@ -1,7 +1,7 @@
 import * as Data from '../assets/data';
 import { SVGLoader } from 'svg-loader-es6';
 import { modal as TingleModal } from 'tingle.js';
-import 'tingle.js/src/tingle.css';
+import { default as Prism } from '../vendors/prismjs/prism';
 
 export default class App {
     constructor ( element ) {

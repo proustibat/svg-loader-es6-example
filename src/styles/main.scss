@@ -1,3 +1,9 @@
+// vendors
+@import '../../node_modules/reset-css/reset.css';
+@import '../../node_modules/tingle.js/src/tingle.css';
+@import '../vendors/prismjs/prism.css';
+
+// App core
 @import 'theme-colors';
 @import 'variables';
 @import 'mixins';
@@ -5,7 +11,7 @@
 @import 'general';
 @import 'header';
 
-// pages
+// Pages
 @import 'page-app';
 @import 'page-dashboard';
 @import 'page-generator';

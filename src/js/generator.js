@@ -1,6 +1,8 @@
 import { SVGLoader, defaultOptions as SVGLoaderDefaultOptions } from 'svg-loader-es6';
-import '../vendors/jscolor';
 import { default as Clipboard } from 'clipboard';
+import { default as Prism } from '../vendors/prismjs/prism';
+// import '../vendors/jscolor';
+import { default as JSColor } from '../vendors/jscolor';
 
 export default class Generator {
     constructor ( element ) {
@@ -14,6 +16,11 @@ export default class Generator {
     }
 
     init () {
+        // Color picker
+        console.log( JSColor );
+        JSColor.setClassName( 'color-picker' );
+        JSColor.enable();
+
         // reset button
         const resetBtn = this.el.querySelector( 'button[type="reset"]' );
         resetBtn.addEventListener( 'click', e => {
