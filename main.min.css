@@ -537,7 +537,49 @@ body {
 
 .page-dashboard {
   padding: 0;
-  margin: 0; }
+  margin: 0 auto;
+  display: flex;
+  min-height: calc(100vh - 7rem);
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  flex-direction: column;
+  overflow: hidden; }
+  .page-dashboard h2 {
+    font-size: 2rem;
+    padding: 1rem; }
+  .page-dashboard .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 7rem);
+    justify-content: space-around; }
+  .page-dashboard .sections {
+    background: #ebebeb;
+    padding: 2rem;
+    border-radius: 0.2rem; }
+  .page-dashboard section {
+    margin-bottom: 2rem; }
+    .page-dashboard section:last-child {
+      margin: 0; }
+  .page-dashboard h3 {
+    font-size: 1.6rem;
+    padding-bottom: 0.7rem;
+    margin-bottom: 0.7rem;
+    border-bottom: 1px solid #fafafa; }
+  .page-dashboard h4 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem; }
+  .page-dashboard p {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem; }
+  .page-dashboard a {
+    margin: 0.1rem; }
+    @media (max-width: 599px) {
+      .page-dashboard a {
+        display: block;
+        width: min-content; } }
 
 .page-generator {
   padding: 0;
