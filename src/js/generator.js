@@ -3,6 +3,7 @@ import { default as Clipboard } from 'clipboard';
 import { default as Prism } from '../vendors/prismjs/prism';
 // import '../vendors/jscolor';
 import { default as JSColor } from '../vendors/jscolor';
+import { default as TinyColor } from 'tinycolor2';
 
 export default class Generator {
     constructor ( element ) {
@@ -103,6 +104,12 @@ export default class Generator {
         }
 
         this.loader = new SVGLoader( options );
+
+        // Set svg background depending on color of the svf shapes
+        const svgContainer = this.el.querySelector( `#${ options.containerId }` );
+        const tc = TinyColor( options.fill || SVGLoaderDefaultOptions.fill );
+        svgContainer.style.backgroundColor = TinyColor( 'white' ).darken( Math.round( tc.getBrightness() / 255 * 100 ) ).toString();
+        // todo: allow user to choose this feature
 
         this.setHtmlCode( options );
         this.setJSCode( options );

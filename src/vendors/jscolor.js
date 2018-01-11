@@ -1801,6 +1801,7 @@ module.exports = (function () {
                     backgroundColor : this.styleElement.style.backgroundColor,
                     color : this.styleElement.style.color
                 };
+
             }
 
             if (this.value) {
