@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0 auto;
   display: flex;
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - 7rem);
   justify-content: center;
   align-items: center;
   max-width: 900px;
@@ -20,6 +20,10 @@
     flex-direction: column;
     justify-content: space-between;
 
+    pre[class*="language-"] {
+      margin: 0;
+    }
+
     @include for-size(phone-only) {
       width: auto;
     }
@@ -30,8 +34,73 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       border: 1px solid $color-dark;
+    }
+
+    .code-block-container {
+      position: relative;
+      margin-top: 1rem;
+
+      > p {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .code-source .content {
+      font-size: 0.8rem;
+    }
+
+    .source-js,
+    .source-html {
+      position: relative;
+    }
+
+    .btn-copy {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      cursor: pointer;
+      outline: none;
+      opacity: 0.3;
+      transition: all 250ms ease;
+      border-radius: 2px;
+      transform: scale(0.9);
+
+      @media (hover: hover) {
+        /* Primary Input responds to hover fully, such as a mouse or a Nintendo Wii controller */
+        &:hover {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+    .copied-message {
+      background: $color-dark;
+      border: 1px solid $color-darker;
+      color: $color-headband;
+      border-radius: 2px;
+      height: 1rem;
+      line-height: 0.8rem;
+      font-size: 0.6rem;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      padding: 0.2rem 0.4rem;
+      margin: 0 auto;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: right;
+      animation-duration: 300ms;
+      animation-name: showMessage;
+      animation-timing-function: ease;
+
+      &.hide {
+        animation-name: hideMessage;
+        transform: translateY(1rem);
+        opacity: 0;
+      }
     }
   }
 

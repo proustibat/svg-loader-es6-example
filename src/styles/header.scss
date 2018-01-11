@@ -1,3 +1,5 @@
+$headband-height: 5rem;
+
 .header {
   background: $color-headband;
   display: flex;
@@ -9,9 +11,10 @@
   .title {
     text-align: center;
     font-weight: bold;
-    padding: 0;
     margin: 0;
     font-size: 1.8rem;
+    padding: 0 0 1rem 0;
+    border-bottom: 1px solid $color-light;
   }
 
   .menu {
