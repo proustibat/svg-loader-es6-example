@@ -1,5 +1,5 @@
 import { SVGLoader, defaultOptions as SVGLoaderDefaultOptions } from 'svg-loader-es6';
-// import { default as Util } from './utils';
+import '../vendors/jscolor';
 
 export default class Generator {
     constructor ( element ) {
@@ -46,6 +46,10 @@ export default class Generator {
             } );
         } );
 
+        this.el.querySelector( '.form #fill' ).defaultValue = SVGLoaderDefaultOptions.fill.replace( '#', '' );
+
+        console.log( this.el.querySelector( '.form #fill' ).defaultValue );
+
         // Trigger submit to create default loader with default values of the form
         submitBtn.click();
     }
@@ -60,6 +64,7 @@ export default class Generator {
         const maxOpacity = parseFloat( form.querySelector( '#maxOpacity' ).value, 10 );
         const margin = parseInt( form.querySelector( '#margin' ).value, 10 );
         const nbRects = parseInt( form.querySelector( '#nbRects' ).value, 10 );
+        const fill = `#${ form.querySelector( '#fill' ).value }`;
 
         return {
             containerId,
@@ -71,7 +76,7 @@ export default class Generator {
             maxOpacity,
             margin,
             nbRects,
-            fill: '#1f1f1f'
+            fill
         };
     }
 

@@ -5911,9 +5911,9 @@ supports-color@^5.1.0:
   dependencies:
     has-flag "^2.0.0"
 
-svg-loader-es6@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/svg-loader-es6/-/svg-loader-es6-0.0.1.tgz#37fa6e32abbe24795b5e4183f4fd72437db3fba1"
+svg-loader-es6@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/svg-loader-es6/-/svg-loader-es6-0.0.3.tgz#675897e93a7fab2a6c406a06f0d55e31b97bcbb0"
 
 svg-tags@^1.0.0:
   version "1.0.0"
