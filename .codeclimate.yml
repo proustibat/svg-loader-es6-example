@@ -10,6 +10,7 @@ exclude_patterns:
 - webpack.*.js
 - karma.conf.js
 - coverage/
+- vendors/
 
 plugins:
   eslint:

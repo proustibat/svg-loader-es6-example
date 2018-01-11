@@ -72,12 +72,11 @@
     border-radius: 50%;
     display: none;
     flex-direction: column;
-    font-size: 2.5rem;
-    height: 0;
+    font-size: 2.2rem;
+    height: 150px;
     justify-content: center;
-    padding: 20% 0;
     position: relative;
-    width: 40%;
+    width: 150px;
   }
 
   &.empty .btn-reset {
