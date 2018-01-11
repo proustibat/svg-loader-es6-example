@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico"><link href="main.min.css?fac7fb7e967d47f2e925" rel="stylesheet"></head>
+<link rel="shortcut icon" href="favicon.ico"><link href="main.min.css?75dd58ddc6a882cff9e5" rel="stylesheet"></head>
 <body>
 
 <!-- Header here by webpack and htmlWebpackPlugin -->
@@ -15,7 +15,7 @@
             <header class="header">
                 <h1 class="title">SVG Loader ES6</h1>
                 <ul class="menu">
-                    <li class=""><a href="index.html">Home</a></li><li class=""><a href="dashboard.html">Dashboard</a></li><li class="isActive"><a href="generator.html">Generator</a></li>
+                    <li class=""><a href="index.html">Home</a></li><li class="isActive"><a href="generator.html">Generator</a></li><li class=""><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="https://github.com/proustibat/svg-loader-es6" target="_blank">Install</a></li>
                 </ul>
             </header>
@@ -31,31 +31,31 @@
             <input id="svgId" name="svgId" type="text" placeholder="loader" />
 
             <label for="size">size</label>
-            <input id="size" name="size" type="range" value="15" min="1" max="50">
+            <input id="size" name="size" type="range" min="1" max="50">
             <span class="badge">15</span>
 
             <label for="radius">radius</label>
-            <input id="radius" name="radius" type="number" value="2" min="0" max="50">
+            <input id="radius" name="radius" type="number" min="0" max="50">
 
             <label for="duration">duration</label>
-            <input id="duration" name="duration" type="number" value="1000" min="0" max="6000" step="25">
+            <input id="duration" name="duration" type="number" min="0" max="6000" step="25">
 
             <label for="minOpacity">minOpacity</label>
-            <input id="minOpacity" name="minOpacity" type="range" value="0.25" min="0" max="1" step="0.01">
+            <input id="minOpacity" name="minOpacity" type="range" min="0" max="1" step="0.01">
             <span class="badge">0.25</span>
 
             <label for="maxOpacity">maxOpacity</label>
-            <input id="maxOpacity" name="maxOpacity" type="range" value="0.75" min="0" max="1" step="0.01">
+            <input id="maxOpacity" name="maxOpacity" type="range" min="0" max="1" step="0.01">
             <span class="badge">0.75</span>
 
             <label for="margin">margin</label>
-            <input id="margin" name="margin" type="number" value="2" min="0">
+            <input id="margin" name="margin" type="number" min="0">
 
             <label for="nbRects">nbRects</label>
-            <input id="nbRects" name="nbRects" type="number" value="3" min="1">
+            <input id="nbRects" name="nbRects" type="number" min="1">
 
             <label for="fill">fill</label>
-            <input id="fill" name="fill" class="jscolor" value="ffffff">
+            <input id="fill" name="fill" class="jscolor">
 
 
             <div class="buttons">
@@ -64,16 +64,27 @@
             </div>
         </form>
     </div>
+
     <div class="result">
         <div id="loader-example"></div>
         <div class="code-source">
-            <p>Javascript:</p>
-            <div class="source-js"></div>
-            <p>HTML:</p>
-            <div class="source-html"></div>
+            <div class="code-block-container">
+                <p>Javascript:</p>
+                <div class="source-js">
+                    <button class="btn-copy"><img width="15" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPgo8L3N2Zz4K" alt="Copy to clipboard"></button>
+                    <div class="content"></div>
+                </div>
+            </div>
+            <div class="code-block-container">
+                <p>HTML:</p>
+                <div class="source-html">
+                    <button class="btn-copy"><img width="15" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPgo8L3N2Zz4K" alt="Copy to clipboard"></button>
+                    <div class="content"></div>
+                </div>
+            </div>
         </div>
     </div>
 
 </div>
-<script type="text/javascript" src="js/main.fac7fb7e967d47f2e925.js?fac7fb7e967d47f2e925"></script></body>
+<script type="text/javascript" src="js/main.75dd58ddc6a882cff9e5.js?75dd58ddc6a882cff9e5"></script></body>
 </html>
