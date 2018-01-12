@@ -62,13 +62,7 @@ export default class App {
         document.querySelector( '.btn-reset' ).addEventListener( 'click', this.onReset.bind( this ) );
 
         // Create on observer on dom changes
-        const observer = new MutationObserver( mutationsList => {
-            for ( const mutation of mutationsList ) {
-                if ( mutation.type === 'childList' ) {
-                    this.page.classList[`${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }`]( 'empty' );
-                }
-            }
-        } );
+        const observer = new MutationObserver( this.onDomMutation.bind( this ) );
 
         // Listen to changes
         observer.observe( this.page, {
@@ -76,6 +70,14 @@ export default class App {
             childList: true,
             subtree: true
         } );
+    }
+
+    onDomMutation ( mutationsList ) {
+        for ( const mutation of mutationsList ) {
+            if ( mutation.type === 'childList' ) {
+                this.page.classList[`${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }`]( 'empty' );
+            }
+        }
     }
 
     onDestroy ( e ) {
