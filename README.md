@@ -21,7 +21,7 @@ If you just wanna use the lib on your project, please read the doc of [the SVG L
 
 ### Settings Generator
 You can use the generator [available here](https://proustibat.github.io/svg-loader-es6-example/generator.html)
-![Settings generator gif](https://j.gifs.com/N9pppp.gif)
+![Settings generator gif](https://j.gifs.com/qYDD8r.gif)
 
 ------
 
