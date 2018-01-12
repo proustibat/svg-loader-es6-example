@@ -1,4 +1,4 @@
-import { SVGLoader, defaultOptions as SVGLoaderDefaultOptions } from 'svg-loader-es6';
+import { SVGLoader } from 'svg-loader-es6';
 import { default as Clipboard } from 'clipboard';
 import { default as Prism } from '../vendors/prismjs/prism';
 // import '../vendors/jscolor';
@@ -46,9 +46,9 @@ export default class Generator {
 
         // Init default values for each inputs
         const form = this.el.querySelector( '.form' );
-        Object.keys( SVGLoaderDefaultOptions )
+        Object.keys( SVGLoader.defaultOptions )
             .filter( key => key !== 'containerId' )
-            .forEach( key => { form.querySelector( `#${ key }` ).defaultValue = key === 'fill' ? SVGLoaderDefaultOptions.fill.replace( '#', '' ) : SVGLoaderDefaultOptions[ key ]; } );
+            .forEach( key => { form.querySelector( `#${ key }` ).defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ]; } );
 
         // Init button to copy code
         this.initClipboardButtons();
@@ -88,12 +88,13 @@ export default class Generator {
     }
 
     setSVGBackground ( ) {
-        const svgContainer = this.el.querySelector( `#${ this.loader.settings.containerId }` );
+        const currentSettings = this.loader.settings;
+        const svgContainer = this.el.querySelector( `#${ currentSettings.containerId }` );
         let color = this.svgBackground;
         if ( this.svgBackground === 'auto' ) {
             // Set svg background depending on color of the svg shapes
-            const tc = TinyColor( this.loader.settings.fill || SVGLoaderDefaultOptions.fill );
-            const opacityMax = this.loader.settings.maxOpacity || SVGLoaderDefaultOptions.maxOpacity;
+            const tc = TinyColor( currentSettings.fill || SVGLoader.defaultOptions.fill );
+            const opacityMax = currentSettings.maxOpacity || SVGLoader.defaultOptions.maxOpacity;
             color = tc.isLight() ? TinyColor( 'black' ).setAlpha( opacityMax ).toString() : TinyColor( 'white' ).darken( Math.round( tc.getBrightness() / 255 * 100 ) ).setAlpha( opacityMax ).toString();
         }
         svgContainer.style.backgroundColor = color;
@@ -109,7 +110,7 @@ export default class Generator {
     setJSCode ( options ) {
         // Create dom content to display using Prism.js
         const optionsLines = Object.keys( options )
-            .filter( key => SVGLoaderDefaultOptions[ key ] !== options[ key ] )
+            .filter( key => SVGLoader.defaultOptions[ key ] !== options[ key ] )
             .map( key => { return `${ key }: '${ options[ key ] }'`; } );
         const content = `new SVGLoader( {\n\t${ optionsLines.join( ',\n\t' ) }\n} );`;
 

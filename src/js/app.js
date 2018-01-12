@@ -5,7 +5,6 @@ import { default as Prism } from '../vendors/prismjs/prism';
 
 export default class App {
     constructor ( element ) {
-        console.log( 'Hello App ', element );
         this.loadersOptions = Data.loadersOptions;
         this.page = element;
         this.loaders = this.createLoaders();
