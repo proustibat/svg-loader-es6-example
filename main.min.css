@@ -693,10 +693,14 @@ body {
     .page-generator .result #loader-example {
       background: #fafafa;
       border: 1px solid #272822;
-      margin-bottom: 1rem;
       padding: 1rem;
       text-align: center;
       overflow: hidden; }
+    .page-generator .result .background-choice {
+      margin-bottom: 1rem;
+      font-size: 0.8rem; }
+      .page-generator .result .background-choice input {
+        margin-left: 0.5rem; }
     .page-generator .result .code-block-container {
       position: relative;
       margin-top: 1rem; }
