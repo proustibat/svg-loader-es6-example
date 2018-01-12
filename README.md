@@ -17,7 +17,7 @@ If you just wanna use the lib on your project, please read the doc of [the SVG L
 ## Live Demo
 [https://proustibat.github.io/svg-loader-es6-example/](https://proustibat.github.io/svg-loader-es6-example/)
 
-![Live Demo Gif](https://user-images.githubusercontent.com/1054387/34739975-4a2aaa4c-f57e-11e7-8de7-788edc5c9ff7.gif)
+![Live Demo Examples](https://j.gifs.com/zK9948.gif)
 
 ### Settings Generator
 You can use the generator [available here](https://proustibat.github.io/svg-loader-es6-example/generator.html)
