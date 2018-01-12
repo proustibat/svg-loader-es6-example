@@ -121,10 +121,18 @@
     #loader-example {
       background: $color-light;
       border: 1px solid $color-dark;
-      margin-bottom: 1rem;
       padding: 1rem;
       text-align: center;
       overflow: hidden;
+    }
+
+    .background-choice {
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+
+      input {
+        margin-left: 0.5rem;
+      }
     }
 
     .code-block-container {

@@ -12,6 +12,7 @@ export default class Generator {
             containerId: 'loader-example'
         };
         this.loader = null;
+        this.svgBackground = 'auto';
 
         this.init();
     }
@@ -64,10 +65,21 @@ export default class Generator {
             } );
         } );
 
+        // If dom isn't compatible
         if ( !( rangeInputs && submitBtn ) ) {
             console.warn( 'Oops, it seems the dom is not valid!' );
             return false;
         }
+
+        // Svg background selection
+        const radioButtons = this.el.querySelectorAll( 'input[name="background-choice"]' );
+        radioButtons.forEach( radioButton => {
+            console.log( radioButton );
+            radioButton.addEventListener( 'change', e => {
+                this.svgBackground = e.target.value;
+                this.setSVGBackground();
+            } );
+        } );
 
         // Init default values for each inputs
         const form = this.el.querySelector( '.form' );
@@ -105,14 +117,23 @@ export default class Generator {
 
         this.loader = new SVGLoader( options );
 
-        // Set svg background depending on color of the svf shapes
-        const svgContainer = this.el.querySelector( `#${ options.containerId }` );
-        const tc = TinyColor( options.fill || SVGLoaderDefaultOptions.fill );
-        svgContainer.style.backgroundColor = TinyColor( 'white' ).darken( Math.round( tc.getBrightness() / 255 * 100 ) ).toString();
-        // todo: allow user to choose this feature
+        this.setSVGBackground();
 
+        // Display source code
         this.setHtmlCode( options );
         this.setJSCode( options );
+    }
+
+    setSVGBackground ( ) {
+        const svgContainer = this.el.querySelector( `#${ this.loader.settings.containerId }` );
+        let color = this.svgBackground;
+        if ( this.svgBackground === 'auto' ) {
+            // Set svg background depending on color of the svg shapes
+            const tc = TinyColor( this.loader.settings.fill || SVGLoaderDefaultOptions.fill );
+            const opacityMax = this.loader.settings.maxOpacity || SVGLoaderDefaultOptions.maxOpacity;
+            color = tc.isLight() ? TinyColor( 'black' ).setAlpha( opacityMax ).toString() : TinyColor( 'white' ).darken( Math.round( tc.getBrightness() / 255 * 100 ) ).setAlpha( opacityMax ).toString();
+        }
+        svgContainer.style.backgroundColor = color;
     }
 
     setHtmlCode ( options ) {
