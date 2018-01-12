@@ -649,8 +649,7 @@ body {
     .page-generator .form form {
       padding: 1rem;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center; }
+      flex-wrap: wrap; }
     .page-generator .form label {
       display: inline-block;
       margin: 0.5rem 0 0;
@@ -683,9 +682,12 @@ body {
     .page-generator .form input[type="range"] {
       width: 38%; }
     .page-generator .form .badge {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       width: 10%;
-      text-align: center; }
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
   .page-generator .result {
     width: 50%;
     display: flex;
@@ -695,7 +697,8 @@ body {
       border: 1px solid #272822;
       padding: 1rem;
       text-align: center;
-      overflow: hidden; }
+      overflow: hidden;
+      transition: background-color 400ms ease; }
     .page-generator .result .background-choice {
       margin-bottom: 1rem;
       font-size: 0.8rem; }
