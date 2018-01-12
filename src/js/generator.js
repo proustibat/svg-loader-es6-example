@@ -24,45 +24,15 @@ export default class Generator {
 
         // reset button
         const resetBtn = this.el.querySelector( 'button[type="reset"]' );
-        resetBtn && resetBtn.addEventListener( 'click', e => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            // reset form
-            e.currentTarget.form.reset();
-
-            // reset badge for range inputs
-            const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
-            rangeInputs.forEach( input => {
-                input.nextElementSibling.innerHTML = input.defaultValue;
-            } );
-
-            // reset color picker
-            const pickerColorInput = this.el.querySelector( '#fill' );
-            pickerColorInput.jscolor && pickerColorInput.jscolor.importColor();
-
-            // trigger a submit to create a nre loader with default options
-            this.el.querySelector( 'button[type="submit"]' ).click();
-        } );
+        resetBtn && resetBtn.addEventListener( 'click', this.onReset.bind( this ) );
 
         // submit button
         const submitBtn = this.el.querySelector( 'button[type="submit"]' );
-        submitBtn && submitBtn.addEventListener( 'click', e => {
-            e.preventDefault();
-
-            // If submitted directly by user get form values else default values
-            const options = e.isTrusted ? this.getOptionsFromForm( e.currentTarget.form ) : this.defaultLoaderOptions;
-
-            this.createNewLoader( options );
-        } );
+        submitBtn && submitBtn.addEventListener( 'click', this.onSubmit.bind( this ) );
 
         // Inputs range changes
         const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
-        rangeInputs && rangeInputs.forEach( input => {
-            input.addEventListener( 'input', e => {
-                e.currentTarget.nextElementSibling.innerHTML = e.currentTarget.value;
-            } );
-        } );
+        rangeInputs && rangeInputs.forEach( input => input.addEventListener( 'input', this.setBadgeValue ) );
 
         // If dom isn't compatible
         if ( !( rangeInputs && submitBtn ) ) {
@@ -72,12 +42,7 @@ export default class Generator {
 
         // Svg background selection
         const radioButtons = this.el.querySelectorAll( 'input[name="background-choice"]' );
-        radioButtons.forEach( radioButton => {
-            radioButton.addEventListener( 'change', e => {
-                this.svgBackground = e.target.value;
-                this.setSVGBackground();
-            } );
-        } );
+        radioButtons.forEach( radioButton => radioButton.addEventListener( 'change', this.onBackgroundSelect.bind( this ) ) );
 
         // Init default values for each inputs
         const form = this.el.querySelector( '.form' );
@@ -195,5 +160,44 @@ export default class Generator {
     onCopyError ( e ) {
         console.error( 'Action:', e.action );
         console.error( 'Trigger:', e.trigger );
+    }
+
+    onReset ( e ) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // reset form
+        e.currentTarget.form.reset();
+
+        // reset badge for range inputs
+        const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
+        rangeInputs.forEach( input => {
+            input.nextElementSibling.innerHTML = input.defaultValue;
+        } );
+
+        // reset color picker
+        const pickerColorInput = this.el.querySelector( '#fill' );
+        pickerColorInput.jscolor && pickerColorInput.jscolor.importColor();
+
+        // trigger a submit to create a nre loader with default options
+        this.el.querySelector( 'button[type="submit"]' ).click();
+    }
+
+    onSubmit ( e ) {
+        e.preventDefault();
+
+        // If submitted directly by user get form values else default values
+        const options = e.isTrusted ? this.getOptionsFromForm( e.currentTarget.form ) : this.defaultLoaderOptions;
+
+        this.createNewLoader( options );
+    }
+
+    setBadgeValue ( e ) {
+        e.currentTarget.nextElementSibling.innerHTML = e.currentTarget.value;
+    }
+
+    onBackgroundSelect ( e ) {
+        this.svgBackground = e.target.value;
+        this.setSVGBackground();
     }
 }
