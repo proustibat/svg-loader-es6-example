@@ -19,7 +19,6 @@ export default class Generator {
 
     init () {
         // Color picker
-        console.log( JSColor );
         JSColor.setClassName( 'color-picker' );
         JSColor.enable();
 
@@ -74,7 +73,6 @@ export default class Generator {
         // Svg background selection
         const radioButtons = this.el.querySelectorAll( 'input[name="background-choice"]' );
         radioButtons.forEach( radioButton => {
-            console.log( radioButton );
             radioButton.addEventListener( 'change', e => {
                 this.svgBackground = e.target.value;
                 this.setSVGBackground();
@@ -119,7 +117,7 @@ export default class Generator {
 
         this.setSVGBackground();
 
-        // Display source code
+        // Display source code if user wants to copy it with clipboard button
         this.setHtmlCode( options );
         this.setJSCode( options );
     }
@@ -139,9 +137,8 @@ export default class Generator {
     setHtmlCode ( options ) {
         // Create dom content to display using Prism.js
         const content = `<div id="${ options.containerId }"></div>`;
-        this.el.querySelector( '.source-html .content' ).innerHTML = `<pre class="language-html">${ Prism.highlight( content, Prism.languages.html ) }</pre>`;
-        // Source code if user wants to copy it with clipboard button
-        this.el.querySelector( '.source-html .btn-copy' ).setAttribute( 'data-clipboard-text', content );
+
+        this.fillCodeContent( 'html', content );
     }
 
     setJSCode ( options ) {
@@ -150,10 +147,15 @@ export default class Generator {
             .filter( key => SVGLoaderDefaultOptions[ key ] !== options[ key ] )
             .map( key => { return `${ key }: '${ options[ key ] }'`; } );
         const content = `new SVGLoader( {\n\t${ optionsLines.join( ',\n\t' ) }\n} );`;
-        this.el.querySelector( '.source-js .content' ).innerHTML = `<pre class="language-javascript">${ Prism.highlight( content, Prism.languages.javascript ) }</pre>`;
 
-        // Source code if user wants to copy it with clipboard button
-        this.el.querySelector( '.source-js .btn-copy' ).setAttribute( 'data-clipboard-text', content );
+        this.fillCodeContent( 'js', content );
+    }
+
+    fillCodeContent ( language, content, ) {
+        const contentEl = this.el.querySelector( `.source-${ language } .content` );
+        const btn = this.el.querySelector( `.source-${ language } .btn-copy` );
+        contentEl.innerHTML = `<pre class="language-${ language }">${ Prism.highlight( content, Prism.languages[ language ] ) }</pre>`;
+        btn.setAttribute( 'data-clipboard-text', content );
     }
 
     initClipboardButtons () {
