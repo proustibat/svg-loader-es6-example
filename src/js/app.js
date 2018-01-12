@@ -7,11 +7,10 @@ export default class App {
     constructor ( element ) {
         console.log( 'Hello App ', element );
         this.loadersOptions = Data.loadersOptions;
-        // this.page = document.querySelector( '.page' );
         this.page = element;
         this.loaders = this.createLoaders();
-        this.listenDom();
-        this.listenReset();
+        this.addListeners();
+        this.watchReset();
     }
 
     createLoaders () {
@@ -52,85 +51,82 @@ export default class App {
         }
     }
 
-    listenDom () {
-        document.querySelectorAll( '.btn-destroy' ).forEach( btn => {
-            btn.addEventListener( 'click', e => {
-                const btn = e.currentTarget;
-                const parent = e.currentTarget.parentElement.parentElement;
-
-                this.loaders[parseInt( btn.id.replace( 'btn-destroy-', '' ), 10 ) - 1].destroy();
-                btn.remove();
-                parent.remove();
-            } );
-        } );
-
-        document.querySelectorAll( '.btn-toggle' ).forEach( btn => {
-            btn.addEventListener( 'click', e => {
-                const btn = e.currentTarget;
-                btn.classList.toggle( 'hidden' );
-                this.loaders[parseInt( btn.id.replace( 'btn-toggle-', '' ), 10 ) - 1].toggle();
-            } );
-        } );
-
-        document.querySelectorAll( '.btn-source' ).forEach( btn => {
-            btn.addEventListener( 'click', e => {
-                const btn = e.currentTarget;
-
-                if ( !this.modal || !( this.modal instanceof TingleModal ) ) {
-                    // // instanciate new modal
-                    this.modal = new TingleModal( {
-                        beforeClose: () => {
-                            this.modal.setContent( '' );
-                            return true;
-                        }
-                    } );
-                }
-
-                // set content
-                const indexData = parseInt( btn.id.replace( 'btn-source-', '' ), 10 ) - 1;
-                const jsonOptions = Data.loadersOptions[ indexData ];
-                const jsonOptionsPretty = JSON.stringify( jsonOptions, null, '\t' );
-                const prismJsCode = Prism.highlight( `const loader = new SVGLoader(${ jsonOptionsPretty })`, Prism.languages.javascript );
-                const codeJSHTML = `<pre class="language-javascript">${ prismJsCode }</pre>`;
-
-                const html = `<div id="${ jsonOptions.containerId }"></div>`;
-                const prismHtmlCode = Prism.highlight( html, Prism.languages.html );
-                const codeHtmlHTML = `<pre class="language-html">${ prismHtmlCode }</pre>`;
-
-                const content = `<div><p>Javascript:</p><div>${ codeJSHTML }</div><p>HTML:</p><div>${ codeHtmlHTML }</div></div>`;
-                this.modal.setContent( content );
-
-                // open modal
-                this.modal.open();
-            } );
-        } );
+    addListeners () {
+        document.querySelectorAll( '.btn-destroy' ).forEach( btn => btn.addEventListener( 'click', this.onDestroy.bind( this ) ) );
+        document.querySelectorAll( '.btn-toggle' ).forEach( btn => btn.addEventListener( 'click', this.onToggle.bind( this ) ) );
+        document.querySelectorAll( '.btn-source' ).forEach( btn => btn.addEventListener( 'click', this.onSeeSource.bind( this ) ) );
     }
 
-    listenReset () {
-        document.querySelector( '.btn-reset' ).addEventListener( 'click', () => {
-            this.prepareDom();
-            this.loaders = this.createLoaders();
-            this.listenDom();
-        } );
+    watchReset () {
+        // Add a listener on the button
+        document.querySelector( '.btn-reset' ).addEventListener( 'click', this.onReset.bind( this ) );
+
+        // Create on observer on dom changes
         const observer = new MutationObserver( mutationsList => {
             for ( const mutation of mutationsList ) {
                 if ( mutation.type === 'childList' ) {
-                    const nbSections = this.page.querySelectorAll( 'section' ).length;
-
-                    if ( nbSections === 0 ) {
-                        this.page.classList.add( 'empty' );
-                    }
-                    else {
-                        this.page.classList.remove( 'empty' );
-                    }
+                    this.page.classList[`${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }`]( 'empty' );
                 }
             }
         } );
 
+        // Listen to changes
         observer.observe( this.page, {
             attributes: true,
             childList: true,
             subtree: true
         } );
+    }
+
+    onDestroy ( e ) {
+        const btn = e.currentTarget;
+        const parent = e.currentTarget.parentElement.parentElement;
+
+        this.loaders[parseInt( btn.id.replace( 'btn-destroy-', '' ), 10 ) - 1].destroy();
+        btn.remove();
+        parent.remove();
+    }
+
+    onToggle ( e ) {
+        const btn = e.currentTarget;
+        btn.classList.toggle( 'hidden' );
+        this.loaders[parseInt( btn.id.replace( 'btn-toggle-', '' ), 10 ) - 1].toggle();
+    }
+
+    onSeeSource ( e ) {
+        const btn = e.currentTarget;
+
+        if ( !this.modal || !( this.modal instanceof TingleModal ) ) {
+            // // instanciate new modal
+            this.modal = new TingleModal( {
+                beforeClose: () => {
+                    this.modal.setContent( '' );
+                    return true;
+                }
+            } );
+        }
+
+        // set content
+        const indexData = parseInt( btn.id.replace( 'btn-source-', '' ), 10 ) - 1;
+        const jsonOptions = Data.loadersOptions[ indexData ];
+        const jsonOptionsPretty = JSON.stringify( jsonOptions, null, '\t' );
+        const prismJsCode = Prism.highlight( `const loader = new SVGLoader(${ jsonOptionsPretty })`, Prism.languages.javascript );
+        const codeJSHTML = `<pre class="language-javascript">${ prismJsCode }</pre>`;
+
+        const html = `<div id="${ jsonOptions.containerId }"></div>`;
+        const prismHtmlCode = Prism.highlight( html, Prism.languages.html );
+        const codeHtmlHTML = `<pre class="language-html">${ prismHtmlCode }</pre>`;
+
+        const content = `<div><p>Javascript:</p><div>${ codeJSHTML }</div><p>HTML:</p><div>${ codeHtmlHTML }</div></div>`;
+        this.modal.setContent( content );
+
+        // open modal
+        this.modal.open();
+    }
+
+    onReset () {
+        this.prepareDom();
+        this.loaders = this.createLoaders();
+        this.addListeners();
     }
 }
