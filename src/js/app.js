@@ -75,11 +75,12 @@ export default class App {
     onDomMutation ( mutationsList ) {
         for ( const mutation of mutationsList ) {
             if ( mutation.type === 'childList' ) {
-                let action = 'remove';
                 if ( this.page.querySelectorAll( 'section' ).length === 0 ) {
-                    action = 'add';
+                    this.page.classList.add( 'empty' );
                 }
-                this.page.classList[ action ]( 'empty' );
+                else {
+                    this.page.classList.remove( 'empty' );
+                }
             }
         }
     }
