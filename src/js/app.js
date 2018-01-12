@@ -73,19 +73,12 @@ export default class App {
     }
 
     onDomMutation ( mutationsList ) {
-        mutationsList.filter( mutation => mutation.type === 'childList' ).forEach( () => {
-            this.page.classList[`${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }`]( 'empty' );
-        } );
-        // for ( const mutation of mutationsList ) {
-        //     if ( mutation.type === 'childList' ) {
-        //         this.page.classList[`${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }`]( 'empty' );
-        //     }
-        // }
+        mutationsList
+            .filter( mutation => mutation.type === 'childList' )
+            .forEach( () => {
+                this.page.classList[ `${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }` ]( 'empty' );
+            } );
     }
-    //
-    // checkChildListContent ( mutation ) {
-    //
-    // }
 
     onDestroy ( e ) {
         const btn = e.currentTarget;
