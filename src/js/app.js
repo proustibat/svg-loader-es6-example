@@ -75,8 +75,10 @@ export default class App {
     onDomMutation ( mutationsList ) {
         for ( const mutation of mutationsList ) {
             if ( mutation.type === 'childList' ) {
-                const nbSections = this.page.querySelectorAll( 'section' ).length;
-                const action = nbSections === 0 ? 'add' : 'remove';
+                let action = 'remove';
+                if ( this.page.querySelectorAll( 'section' ).length === 0 ) {
+                    action = 'add';
+                }
                 this.page.classList[ action ]( 'empty' );
             }
         }
