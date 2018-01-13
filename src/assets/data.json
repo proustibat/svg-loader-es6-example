@@ -5,11 +5,11 @@
       "containerId": "example-2",
       "size": 10,
       "radius": 5,
-      "duration": 1800,
+      "duration": 800,
       "maxOpacity": 1,
       "minOpacity": 0.4,
       "margin": 3,
-      "nbRects": 5,
+      "nbRects": 3,
       "fill": "#0B72FF"
     },
     {
@@ -36,8 +36,8 @@
     },
     {
       "containerId": "example-5",
-      "size": 4,
-      "radius": 2,
+      "size": 8,
+      "radius": 4,
       "margin": 1,
       "nbRects": 5,
       "fill": "purple",

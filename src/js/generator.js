@@ -48,8 +48,17 @@ export default class Generator {
         Object.keys( SVGLoader.defaultOptions )
             .filter( key => key !== 'containerId' )
             .forEach( key => {
-                form.querySelector( `#${ key }` ).defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
-                form.querySelector( `#${ key }` ).value = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
+                const input = form.querySelector( `#${ key }` );
+                // Inputs with type range need reinit min and max to update control cursor
+                if ( input.id === 'size' ) {
+                    input.min = 0;
+                    input.min = 50;
+                }
+                if ( input.id === 'minOpacity' || input.id === 'maxOpacity' ) {
+                    input.min = 0;
+                    input.max = 1;
+                }
+                input.defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
             } );
 
         // Init button to copy code
