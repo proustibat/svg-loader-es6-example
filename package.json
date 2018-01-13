@@ -9,7 +9,7 @@
   "dependencies": {
     "clipboard": "1.7.1",
     "reset-css": "2.2.1",
-    "svg-loader-es6": "1.0.0",
+    "svg-loader-es6": "1.0.5",
     "tingle.js": "0.12.0",
     "tinycolor2": "1.4.1"
   },

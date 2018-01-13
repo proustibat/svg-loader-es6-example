@@ -1,7 +1,6 @@
 import { SVGLoader } from 'svg-loader-es6';
 import { default as Clipboard } from 'clipboard';
 import { default as Prism } from '../vendors/prismjs/prism';
-// import '../vendors/jscolor';
 import { default as JSColor } from '../vendors/jscolor';
 import { default as TinyColor } from 'tinycolor2';
 
@@ -48,7 +47,10 @@ export default class Generator {
         const form = this.el.querySelector( '.form' );
         Object.keys( SVGLoader.defaultOptions )
             .filter( key => key !== 'containerId' )
-            .forEach( key => { form.querySelector( `#${ key }` ).defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ]; } );
+            .forEach( key => {
+                form.querySelector( `#${ key }` ).defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
+                form.querySelector( `#${ key }` ).value = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
+            } );
 
         // Init button to copy code
         this.initClipboardButtons();
