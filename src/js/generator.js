@@ -18,43 +18,41 @@ export default class Generator {
 
     init () {
         // Color picker
-        JSColor.setClassName( 'color-picker' );
         JSColor.enable();
 
-        const isDomValid = this.addListeners();
+        // If dom is valid
+        if ( this.addListeners() ) {
+            // Svg background selection
+            const radioButtons = this.el.querySelectorAll( 'input[name="background-choice"]' );
+            radioButtons.forEach( radioButton => radioButton.addEventListener( 'change', this.onBackgroundSelect.bind( this ) ) );
 
-        if( !isDomValid ) {
-            console.warn( 'Oops, it seems the dom is not valid!' );
-            return false;
+            // Init default values for each inputs
+            const form = this.el.querySelector( '.form' );
+            Object.keys( SVGLoader.defaultOptions )
+                .filter( key => key !== 'containerId' )
+                .forEach( key => {
+                    const input = form.querySelector( `#${ key }` );
+                    // Inputs with type range need reinit min and max to update control cursor
+                    if ( input.id === 'size' ) {
+                        input.min = 0;
+                        input.max = 50;
+                    }
+                    if ( input.id === 'minOpacity' || input.id === 'maxOpacity' ) {
+                        input.min = 0;
+                        input.max = 1;
+                    }
+                    input.defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
+                } );
+
+            // Init button to copy code
+            this.initClipboardButtons();
+
+            // Trigger submit to create default loader with default values of the form
+            this.el.querySelector( 'button[type="submit"]' ).click();
         }
-
-        // Svg background selection
-        const radioButtons = this.el.querySelectorAll( 'input[name="background-choice"]' );
-        radioButtons.forEach( radioButton => radioButton.addEventListener( 'change', this.onBackgroundSelect.bind( this ) ) );
-
-        // Init default values for each inputs
-        const form = this.el.querySelector( '.form' );
-        Object.keys( SVGLoader.defaultOptions )
-            .filter( key => key !== 'containerId' )
-            .forEach( key => {
-                const input = form.querySelector( `#${ key }` );
-                // Inputs with type range need reinit min and max to update control cursor
-                if ( input.id === 'size' ) {
-                    input.min = 0;
-                    input.max = 50;
-                }
-                if ( input.id === 'minOpacity' || input.id === 'maxOpacity' ) {
-                    input.min = 0;
-                    input.max = 1;
-                }
-                input.defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
-            } );
-
-        // Init button to copy code
-        this.initClipboardButtons();
-
-        // Trigger submit to create default loader with default values of the form
-        this.el.querySelector( 'button[type="submit"]' ).click();
+        else {
+            console.warn( 'Oops, it seems the dom is not valid!' );
+        }
     }
 
     addListeners () {
