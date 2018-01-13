@@ -52,7 +52,7 @@ export default class Generator {
                 // Inputs with type range need reinit min and max to update control cursor
                 if ( input.id === 'size' ) {
                     input.min = 0;
-                    input.min = 50;
+                    input.max = 50;
                 }
                 if ( input.id === 'minOpacity' || input.id === 'maxOpacity' ) {
                     input.min = 0;
