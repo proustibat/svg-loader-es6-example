@@ -21,20 +21,9 @@ export default class Generator {
         JSColor.setClassName( 'color-picker' );
         JSColor.enable();
 
-        // reset button
-        const resetBtn = this.el.querySelector( 'button[type="reset"]' );
-        resetBtn && resetBtn.addEventListener( 'click', this.onReset.bind( this ) );
+        const isDomValid = this.addListeners();
 
-        // submit button
-        const submitBtn = this.el.querySelector( 'button[type="submit"]' );
-        submitBtn && submitBtn.addEventListener( 'click', this.onSubmit.bind( this ) );
-
-        // Inputs range changes
-        const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
-        rangeInputs && rangeInputs.forEach( input => input.addEventListener( 'input', this.setBadgeValue ) );
-
-        // If dom isn't compatible
-        if ( !( rangeInputs && submitBtn ) ) {
+        if( !isDomValid ) {
             console.warn( 'Oops, it seems the dom is not valid!' );
             return false;
         }
@@ -65,7 +54,24 @@ export default class Generator {
         this.initClipboardButtons();
 
         // Trigger submit to create default loader with default values of the form
-        submitBtn.click();
+        this.el.querySelector( 'button[type="submit"]' ).click();
+    }
+
+    addListeners () {
+        // reset button
+        const resetBtn = this.el.querySelector( 'button[type="reset"]' );
+        resetBtn && resetBtn.addEventListener( 'click', this.onReset.bind( this ) );
+
+        // submit button
+        const submitBtn = this.el.querySelector( 'button[type="submit"]' );
+        submitBtn && submitBtn.addEventListener( 'click', this.onSubmit.bind( this ) );
+
+        // Inputs range changes
+        const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
+        rangeInputs && rangeInputs.forEach( input => input.addEventListener( 'input', this.setBadgeValue ) );
+
+        // If dom isn't compatible
+        return ( rangeInputs && submitBtn );
     }
 
     getOptionsFromForm ( form ) {
