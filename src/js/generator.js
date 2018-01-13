@@ -34,7 +34,7 @@ export default class Generator {
                     const input = form.querySelector( `#${ key }` );
                     // Inputs with type range need reinit min and max to update control cursor
                     if ( input.id === 'size' ) {
-                        input.min = 0;
+                        input.min = 1;
                         input.max = 50;
                     }
                     if ( input.id === 'minOpacity' || input.id === 'maxOpacity' ) {
@@ -48,7 +48,7 @@ export default class Generator {
             this.initClipboardButtons();
 
             // Trigger submit to create default loader with default values of the form
-            this.el.querySelector( 'button[type="submit"]' ).click();
+            this.onSubmit();
         }
         else {
             console.warn( 'Oops, it seems the dom is not valid!' );
@@ -56,20 +56,28 @@ export default class Generator {
     }
 
     addListeners () {
-        // reset button
+        // Reset button
         const resetBtn = this.el.querySelector( 'button[type="reset"]' );
         resetBtn && resetBtn.addEventListener( 'click', this.onReset.bind( this ) );
-
-        // submit button
-        const submitBtn = this.el.querySelector( 'button[type="submit"]' );
-        submitBtn && submitBtn.addEventListener( 'click', this.onSubmit.bind( this ) );
 
         // Inputs range changes
         const rangeInputs = this.el.querySelectorAll( 'input[type="range"]' );
         rangeInputs && rangeInputs.forEach( input => input.addEventListener( 'input', this.setBadgeValue ) );
 
+        // Listen to all inputs changes
+        this.el.querySelectorAll( 'input' ).forEach( input => {
+            input.addEventListener( 'input', this.onSubmit.bind( this ) );
+        } );
+
+        // Fill color input needs to listen to chagne event because of jscolor
+        this.el.querySelector( '#fill' ).addEventListener( 'change', e => {
+            const event = document.createEvent( 'CustomEvent' );
+            event.initCustomEvent( 'fillChange', true, true, { currentTarget: e.currentTarget } );
+            this.onSubmit( event );
+        } );
+
         // If dom isn't compatible
-        return ( rangeInputs && submitBtn );
+        return rangeInputs.length > 0;
     }
 
     getOptionsFromForm ( form ) {
@@ -196,14 +204,14 @@ export default class Generator {
         pickerColorInput.jscolor && pickerColorInput.jscolor.importColor();
 
         // trigger a submit to create a nre loader with default options
-        this.el.querySelector( 'button[type="submit"]' ).click();
+        this.onSubmit( e );
     }
 
     onSubmit ( e ) {
-        e.preventDefault();
+        e && e.preventDefault();
 
         // If submitted directly by user get form values else default values
-        const options = e.isTrusted ? this.getOptionsFromForm( e.currentTarget.form ) : this.defaultLoaderOptions;
+        const options = e && ( e.isTrusted || e.type === 'fillChange' ) ? this.getOptionsFromForm( ( e.currentTarget || e.detail.currentTarget ).form ) : this.defaultLoaderOptions;
 
         this.createNewLoader( options );
     }
