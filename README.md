@@ -1,5 +1,7 @@
 # SVG Loader Vanilla ES6 - Example 
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/svg-loader-es6-example.svg)](https://greenkeeper.io/)
+
 This repo is a demo to show how to use **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)**.
 
 If you just wanna use the lib on your project, please read the doc of [the SVG Loader ES6](https://github.com/proustibat/svg-loader-es6/blob/master/README.md)
