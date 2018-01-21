@@ -1,7 +1,5 @@
 # SVG Loader Vanilla ES6 - Example 
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/svg-loader-es6-example.svg)](https://greenkeeper.io/)
-
 This repo is a demo to show how to use **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)**.
 
 If you just wanna use the lib on your project, please read the doc of [the SVG Loader ES6](https://github.com/proustibat/svg-loader-es6/blob/master/README.md)
@@ -9,10 +7,15 @@ If you just wanna use the lib on your project, please read the doc of [the SVG L
 ------
 
 [![Build Status](https://travis-ci.org/proustibat/svg-loader-es6-example.svg?branch=master)](https://travis-ci.org/proustibat/svg-loader-es6-example) 
+[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/svg-loader-es6-example.svg)](https://greenkeeper.io/)
+
+
 [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) 
-[![GitHub last commit](https://img.shields.io/github/last-commit/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) <a href='https://david-dm.org/proustibat/svg-loader-es6-example'><img src='https://david-dm.org/proustibat/svg-loader-es6-example/status.svg' alt='dependencies Status'/></a>
-<a href='https://david-dm.org/proustibat/svg-loader-es6-example?type=dev'><img src='https://david-dm.org/proustibat/svg-loader-es6-example/dev-status.svg' alt='devDependencies Status'/></a>
-<a href='https://github.com/proustibat/svg-loader-es6-example/blob/master/LICENSE.md'><img src='https://img.shields.io/github/license/proustibat/svg-loader-es6-example.svg' alt='GitHub license'/></a>
+[![GitHub last commit](https://img.shields.io/github/last-commit/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) 
+[![dependencies Status](img src='https://david-dm.org/proustibat/svg-loader-es6-example/status.sv)](https://david-dm.org/proustibat/svg-loader-es6-example)
+[![devDependencies Status](img src='https://david-dm.org/proustibat/svg-loader-es6-example/dev-status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example?type=dev)
+[![License](img src='https://img.shields.io/github/license/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/blob/master/LICENSE.md)
+
 
 ------
 

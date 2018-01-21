@@ -1,6 +1,6 @@
 {
   "name": "svg-loader-es6-example",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Example for svg-loader-es6 package",
   "main": "src/js/main.js",
   "repository": "git@github.com:proustibat/svg-loader-es6-example.git",
