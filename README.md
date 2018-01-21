@@ -12,9 +12,9 @@ If you just wanna use the lib on your project, please read the doc of [the SVG L
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) 
 [![GitHub last commit](https://img.shields.io/github/last-commit/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) 
-[![dependencies Status](img src='https://david-dm.org/proustibat/svg-loader-es6-example/status.sv)](https://david-dm.org/proustibat/svg-loader-es6-example)
-[![devDependencies Status](img src='https://david-dm.org/proustibat/svg-loader-es6-example/dev-status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example?type=dev)
-[![License](img src='https://img.shields.io/github/license/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/blob/master/LICENSE.md)
+[![dependencies Status](https://david-dm.org/proustibat/svg-loader-es6-example/status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example) 
+[![dependencies Status](https://david-dm.org/proustibat/svg-loader-es6-example/dev-status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example?type=dev) 
+[![License](https://img.shields.io/github/license/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/blob/master/LICENSE.md)
 
 
 ------
