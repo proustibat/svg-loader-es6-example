@@ -6,16 +6,9 @@ If you just wanna use the lib on your project, please read the doc of [the SVG L
 
 ------
 
-[![Build Status](https://travis-ci.org/proustibat/svg-loader-es6-example.svg?branch=master)](https://travis-ci.org/proustibat/svg-loader-es6-example) 
-[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/svg-loader-es6-example.svg)](https://greenkeeper.io/)
 
-
-[![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) 
-[![GitHub last commit](https://img.shields.io/github/last-commit/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) 
-[![dependencies Status](https://david-dm.org/proustibat/svg-loader-es6-example/status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example) 
-[![dependencies Status](https://david-dm.org/proustibat/svg-loader-es6-example/dev-status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example?type=dev) 
-[![License](https://img.shields.io/github/license/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/blob/master/LICENSE.md)
-
+| [![Build Status](https://travis-ci.org/proustibat/svg-loader-es6-example.svg?branch=master)](https://travis-ci.org/proustibat/svg-loader-es6-example) <br/> [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master) <br/> [![GitHub last commit](https://img.shields.io/github/last-commit/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/commits/master)  | [![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/svg-loader-es6-example.svg)](https://greenkeeper.io/) <br/> [![dependencies Status](https://david-dm.org/proustibat/svg-loader-es6-example/status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example) <br/> [![dependencies Status](https://david-dm.org/proustibat/svg-loader-es6-example/dev-status.svg)](https://david-dm.org/proustibat/svg-loader-es6-example?type=dev)  | [![License](https://img.shields.io/github/license/proustibat/svg-loader-es6-example.svg)](https://github.com/proustibat/svg-loader-es6-example/blob/master/LICENSE.md) |
+| :--- | :--- |:--- |
 
 ------
 
