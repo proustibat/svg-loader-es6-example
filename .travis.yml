@@ -4,7 +4,9 @@ env:
   - GITHUB_REPO: proustibat/svg-loader-es6-example
   - secure: L8Q/nGWH6e3S/jTRwZzCumFgfUp1OwwFIJ2BBpbQ3b5vCFduhu0LKqhs8rw8ycDG614qB34091fPcn7GFNh7pE7BXfPrcCpOhdnhwIKpRH6slWcadUJv0Yrej68Dh2pg74jP1ju/Crwn4T9Tfh1Y2VCNGZ7oAo8Qw2+6qzWTOozEWH2QH7svnMyuZGpIGDMVTQv8hN9ieGkb426x3CWgXtCrQktO4H4Alx3l8LAY2J+g6sz3TUZIPwltFxRUylkSeuXq96zRV58mnuYNvaO2xpmqVH27U6j//S7jc8rocXqelhti6YcVUxnTTiwtUOkIg2wTJehanJMGdz0+gvt9nnKT2hqXJBkIfgAi5TNhCqAElzsZ70ST/10sI+xNEFhbmOiqgG1e9qhkqURs41z+0eN9Oet14sdQOV7SPxdEDd9cwb2dXinfjw8au5zZ+DfwdkczuzB80D42n+t5bzV/x+opqb9JglnYWIP00HEHJZ2LuwTMusvh36bxrYJKkhVqeVFm98ZXJVRcT5f46qGd2xky8Uqbp5YUpvo4nbbkP0GLdmSoE4iOrW55/t3kswGUiMbF1dJ0X9gd0pyGCeBp4hh/3XXU3YjNhMwAobSQcuqVA8K2GESitigO1wPYQTMSJ7otoM2ryS+DB2s7sreRDL5wHqAkn/5Z9aQ8zOf+wjw=
 language: node_js
-node_js: '8'
+node_js:
+- '8'
+- '10'
 cache: yarn
 addons:
   sonarcloud:
