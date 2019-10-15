@@ -8,7 +8,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "clipboard": "1.7.1",
-    "reset-css": "2.2.1",
+    "reset-css": "5.0.0",
     "svg-loader-es6": "1.1.1",
     "tingle.js": "0.13.1",
     "tinycolor2": "1.4.1"
