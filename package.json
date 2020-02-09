@@ -38,7 +38,7 @@
     "standard": "11.0.0",
     "stylelint": "9.0.0",
     "style-loader": "0.20.2",
-    "stylelint-config-standard": "18.1.0",
+    "stylelint-config-standard": "20.0.0",
     "uglifyjs-webpack-plugin": "1.2.0",
     "stylelint-webpack-plugin": "0.10.2",
     "underscore-template-loader": "0.8.0",
