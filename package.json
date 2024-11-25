@@ -11,7 +11,7 @@
     "reset-css": "2.2.1",
     "svg-loader-es6": "1.1.1",
     "tingle.js": "0.16.0",
-    "tinycolor2": "1.4.1"
+    "tinycolor2": "1.6.0"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
