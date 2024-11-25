@@ -7212,9 +7212,9 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tingle.js@0.13.1:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/tingle.js/-/tingle.js-0.13.1.tgz#d12092f633325cc4cd00f935d279c3d9836bd289"
+tingle.js@0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/tingle.js/-/tingle.js-0.16.0.tgz#1ac35f91315271c47cb6bb7299d0b327ac7539ea"
 
 tiny-emitter@^2.0.0:
   version "2.1.0"
