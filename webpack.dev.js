@@ -1,8 +1,15 @@
-const webpack = require( 'webpack' );
-const merge = require( 'webpack-merge' );
+const { merge } = require( 'webpack-merge' );
 const common = require( './webpack.common.js' );
 
 module.exports = merge( common, {
+    mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        liveReload: true,
+        hot: true,
+        open: true,
+        static: [ './dist' ],
+    },
     module: {
         rules: [
             {
@@ -15,12 +22,8 @@ module.exports = merge( common, {
             }
         ]
     },
-    plugins: [
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-    ],
-    devServer: {
-        contentBase: './dist',
-        hot: true,
-    },
+    // plugins: [
+    //     new webpack.NamedModulesPlugin(),
+    //     new webpack.HotModuleReplacementPlugin(),
+    // ],
 } );
