@@ -5,7 +5,6 @@
 
 // App core
 @import 'theme-colors';
-@import 'variables';
 @import 'mixins';
 @import 'animations';
 @import 'general';
@@ -15,3 +14,16 @@
 @import 'page-app';
 @import 'page-dashboard';
 @import 'page-generator';
+
+//@import '~reset-css/reset.css';
+//@import '~tingle.js/src/tingle.css';
+//@import '../vendors/prismjs/prism.css';
+
+//@include meta.load-css('page-app');
+//@include meta.load-css('page-dashboard');
+//@include meta.load-css('page-generator');
+
+//@import 'page-app';
+//@import 'page-dashboard';
+//@import 'page-generator';
+

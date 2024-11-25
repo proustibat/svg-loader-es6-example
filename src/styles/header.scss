@@ -1,10 +1,10 @@
-$headband-height: 5rem;
+@use 'theme-colors';
 
 .header {
   background: $color-headband;
   display: flex;
   flex-direction: column;
-  height: $headband-height;
+  height: 5rem;
   justify-content: space-between;
   padding: 1rem 0;
 

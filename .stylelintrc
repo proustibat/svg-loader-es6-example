@@ -17,7 +17,8 @@
         "include",
         "content",
         "return",
-        "function"
+        "function",
+        "use"
       ]
     }]
   }
