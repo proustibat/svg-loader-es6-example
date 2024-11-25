@@ -15,15 +15,11 @@ module.exports = merge( common, {
             {
                 test: /\.(s*)css$/,
                 use: [
-                    'style-loader?sourceMap',
+                    'style-loader',
                     'css-loader?sourceMap',
                     'sass-loader?sourceMap'
                 ]
             }
         ]
-    },
-    // plugins: [
-    //     new webpack.NamedModulesPlugin(),
-    //     new webpack.HotModuleReplacementPlugin(),
-    // ],
+    }
 } );

@@ -1,32 +1,23 @@
-const merge = require( 'webpack-merge' );
-const UglifyJSPlugin = require( 'uglifyjs-webpack-plugin' );
+const { merge } = require( 'webpack-merge' );
+const TerserPlugin = require( 'terser-webpack-plugin' );
 const common = require( './webpack.common.js' );
-const webpack = require( 'webpack' );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = merge( common, {
+    mode: 'production',
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin(),
+        ],
+    },
     module: {
         rules: [
-
             {
-                test: /\.(s*)css$/,
-                use: ExtractTextPlugin.extract( {
-                    fallback: 'style-loader?sourceMap',
-                    use: [
-                        'css-loader?sourceMap',
-                        'sass-loader?sourceMap'
-                    ],
-                } )
-            },
+                test: /\.(s(a|c)ss)$/,
+                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+            }
         ]
     },
-    plugins: [
-        new UglifyJSPlugin( {
-            sourceMap: true,
-        } ),
-        new webpack.DefinePlugin( {
-            'process.env.NODE_ENV': JSON.stringify( 'production' )
-        } ),
-        new ExtractTextPlugin( { filename: 'main.min.css' } ),
-    ],
+    plugins: [ new MiniCssExtractPlugin() ],
 } );
