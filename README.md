@@ -5,7 +5,7 @@ This repo is a demo to show how to use **[SVG Loader ES6](https://github.com/pro
 If you just wanna use the lib on your project, please read the doc of [the SVG Loader ES6](https://github.com/proustibat/svg-loader-es6/blob/master/README.md)
 
 ## Live Demo
-[https://svg-loader-es6-example.vercel.app/](https://svg-loader-es6-example.vercel.app/)
+[https://svg-loader.proustibat.dev/](https://svg-loader.proustibat.dev/)
 
 ![Live Demo Examples](https://j.gifs.com/zK9948.gif)
 
