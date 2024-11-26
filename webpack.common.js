@@ -11,10 +11,6 @@ const pagesList = [
     {
         title: 'Generator',
         filename: 'generator'
-    },
-    {
-        title: 'Dashboard',
-        filename: 'dashboard'
     }
 ];
 
@@ -31,11 +27,14 @@ const getHtmlWebpackPluginInstances = () => {
             </header>`;
         return new HtmlWebpackPlugin( {
             filename: `${ page.filename }.html`,
-            template: `./src/${ page.filename }.ejs`,
+            template: '!!underscore-template-loader!' + path.join( './src', `${ page.filename }.ejs` ),
+            // template: `./src/${ page.filename }.ejs`,
             title: pageTitle,
             hash: true,
             favicon: './src/favicon.ico',
-            header
+            header,
+            minify: false,
+            inject: 'body',
         } );
     } );
 };

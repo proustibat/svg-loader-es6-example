@@ -1,6 +1,6 @@
 {
   "name": "svg-loader-es6-example",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Example for svg-loader-es6 package",
   "main": "src/js/main.js",
   "repository": "git@github.com:proustibat/svg-loader-es6-example.git",
@@ -40,7 +40,6 @@
     "stylelint": "8.0.0",
     "stylelint-config-standard": "17.0.0",
     "stylelint-webpack-plugin": "0.10.5",
-    "terser-webpack-plugin": "^5.3.10",
     "underscore-template-loader": "1.2.0",
     "url-loader": "4.1.1",
     "util": "0.12.5",
