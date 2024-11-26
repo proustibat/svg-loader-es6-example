@@ -16,7 +16,7 @@ module.exports = merge( common, {
                 test: /\.(s*)css$/,
                 use: [
                     'style-loader',
-                    'css-loader?sourceMap',
+                    'css-loader',
                     'sass-loader?sourceMap'
                 ]
             }
