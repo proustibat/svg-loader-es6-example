@@ -1,16 +1,17 @@
 // vendors
 @import '../../node_modules/reset-css/reset.css';
-@import url('../../node_modules/tingle.js/src/tingle.css');
-@import url('../vendors/prismjs/prism.css');
+@import '../../node_modules/tingle.js/src/tingle.css';
+@import '../vendors/prismjs/prism.css';
+
 // App core
 @import 'theme-colors';
-@import url('mixins');
-@import url('animations');
-@import url('general');
-@import url('header');
+@import 'mixins';
+@import 'animations';
+@import 'general';
+@import 'header';
 // Pages
 @import 'page-app';
-@import url('page-generator');
+@import 'page-generator';
 
 //@import '~reset-css/reset.css';
 //@import '~tingle.js/src/tingle.css';

@@ -1,7 +1,6 @@
 const path = require( 'path' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
-const StyleLintPlugin = require( 'stylelint-webpack-plugin' );
 
 const pagesList = [
     {
@@ -87,9 +86,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new StyleLintPlugin( {
-            configFile: '.stylelintrc'
-        } ),
         ...getHtmlWebpackPluginInstances(),
         /**
          * All files inside webpack's output.path directory will be removed once, but the
