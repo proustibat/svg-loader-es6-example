@@ -1,3 +1,6 @@
+@use "theme-colors";
+@use "mixins";
+
 .page-app {
   padding: 0;
   margin: 0 auto;
@@ -23,20 +26,20 @@
   }
 
   .sections {
-    background: $light-grey;
+    background: theme-colors.$light-grey;
     padding: 2rem;
     border-radius: 0.2rem;
   }
 
   section {
     margin-bottom: 2rem;
-    background: $color-light;
+    background: theme-colors.$color-light;
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
 
-    @include for-size(phone-only) {
+    @include mixins.for-size(phone-only) {
       padding: 2rem 1rem;
       flex-direction: column;
     }
@@ -51,7 +54,7 @@
     justify-content: center;
     width: 100%;
 
-    @include for-size(phone-only) {
+    @include mixins.for-size(phone-only) {
       margin-bottom: 1rem;
     }
   }

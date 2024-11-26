@@ -1,3 +1,6 @@
+@use "theme-colors";
+@use "mixins";
+
 .page-generator {
   padding: 0;
   margin: 0 auto;
@@ -22,31 +25,31 @@
   }
 
   .sections {
-    background: $light-grey;
+    background: theme-colors.$light-grey;
     padding: 2rem;
     border-radius: 0.2rem;
     display: flex;
     flex-direction: row;
 
-    @include for-size(phone-only) {
+    @include mixins.for-size(phone-only) {
       flex-direction: column;
     }
   }
 
   .form {
-    color: $light-grey;
+    color: theme-colors.$light-grey;
     width: 50%;
     margin-right: 2rem;
-    background: $color-dark;
+    background: theme-colors.$color-dark;
 
-    @include for-size(phone-only) {
+    @include mixins.for-size(phone-only) {
       margin: 0 0 2rem;
     }
 
     h2 {
       margin: 1rem 1rem 0;
       font-size: 1.4rem;
-      border-bottom: 1px solid $color-light;
+      border-bottom: 1px solid theme-colors.$color-light;
       padding: 0 0 1rem;
     }
 
@@ -64,7 +67,7 @@
 
     .buttons {
       margin: 1rem 0 0;
-      background: $color-light;
+      background: theme-colors.$color-light;
       min-height: 4rem;
       width: 100%;
       display: flex;
@@ -73,9 +76,9 @@
     }
 
     button {
-      background: $color-dark;
+      background: theme-colors.$color-dark;
       border: none;
-      color: $color-light;
+      color: theme-colors.$color-light;
       border-radius: 5px;
       height: 25px;
       cursor: pointer;
@@ -115,8 +118,8 @@
     flex-direction: column;
 
     #loader-example {
-      background: $color-light;
-      border: 1px solid $color-dark;
+      background: theme-colors.$color-light;
+      border: 1px solid theme-colors.$color-dark;
       padding: 1rem;
       text-align: center;
       overflow: hidden;
@@ -171,9 +174,9 @@
     }
 
     .copied-message {
-      background: $color-dark;
-      border: 1px solid $color-darker;
-      color: $color-headband;
+      background: theme-colors.$color-dark;
+      border: 1px solid theme-colors.$color-darker;
+      color: theme-colors.$color-headband;
       border-radius: 2px;
       height: 1rem;
       line-height: 0.8rem;
@@ -198,7 +201,7 @@
     }
   }
 
-  @include for-size(phone-only) {
+  @include mixins.for-size(phone-only) {
     .form,
     .result {
       width: auto;

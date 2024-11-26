@@ -1,22 +1,12 @@
+@use "sass:meta";
+
 // vendors
-@import '../../node_modules/reset-css/reset.css';
-@import '../../node_modules/tingle.js/src/tingle.css';
+@use '../../node_modules/reset-css/sass/_reset.scss';
+@import 'tingle.js/src/tingle.css';
 @import '../vendors/prismjs/prism.css';
 
-// App core
-@import 'theme-colors';
-@import 'mixins';
-@import 'animations';
-@import 'general';
-@import 'header';
 // Pages
-@import 'page-app';
-@import 'page-generator';
+@include meta.load-css('header');
+@include meta.load-css('page-app');
+@include meta.load-css('page-generator');
 
-//@import '~reset-css/reset.css';
-//@import '~tingle.js/src/tingle.css';
-//@import '../vendors/prismjs/prism.css';
-//@include meta.load-css('page-app');
-//@include meta.load-css('page-generator');
-//@import 'page-app';
-//@import 'page-generator';

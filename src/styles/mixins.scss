@@ -1,37 +1,39 @@
-/**
-https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
-// usage
-.my-box {
-  padding: 10px;
-
-  @include for-size(desktop-up) {
-    padding: 20px;
+/***************************************
+  Responsive Helper
+  Usage:
+  .my-box {
+    padding: 10px;
+    @include for-size(tv) {
+      padding: 80px;
+    }
+    @include for-size(desktop-up) {
+      padding: 20px;
+    }
+    @include for-size(tv) {
+      padding: 80px;
+    }
   }
-}
- */
-@mixin for-size( $range ) {
-  $phone-upper-boundary: 600px;
-  $tablet-portrait-upper-boundary: 900px;
-  $tablet-landscape-upper-boundary: 1200px;
-  $desktop-upper-boundary: 1800px;
+**************************************/
+$phone-upper-boundary: 670px !default;
+$tablet-portrait-upper-boundary: 900px !default;
+$tablet-landscape-upper-boundary: 1024px !default;
+$desktop-upper-boundary: 1280px !default;
+$tv-upper-boundary: 1800px !default;
 
+@mixin for-size($range) {
   @if $range == phone-only {
     @media (max-width: #{$phone-upper-boundary - 1}) { @content; }
-  }
-
-  @else if $range == tablet-portrait-up {
+  } @else if $range == phone-only-landscape {
+    @media (max-width: #{$phone-upper-boundary - 1}) and (orientation: landscape) { @content; }
+  } @else if $range == tablet-portrait-up {
     @media (min-width: $phone-upper-boundary) { @content; }
-  }
-
-  @else if $range == tablet-landscape-up {
+  } @else if $range == tablet-landscape-up {
     @media (min-width: $tablet-portrait-upper-boundary) { @content; }
-  }
-
-  @else if $range == desktop-up {
-    @media (min-width: $tablet-landscape-upper-boundary) { @content; }
-  }
-
-  @else if $range == big-desktop-up {
+  } @else if $range == old-desktop-only {
+    @media (min-width: $tablet-landscape-upper-boundary) and (max-width: #{$desktop-upper-boundary - 1}) { @content; }
+  } @else if $range == desktop-up {
     @media (min-width: $desktop-upper-boundary) { @content; }
+  } @else if $range == tv {
+    @media (min-width: $tv-upper-boundary) { @content; }
   }
 }
