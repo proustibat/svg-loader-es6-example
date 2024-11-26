@@ -187,11 +187,11 @@
       right: 0;
       text-align: right;
       animation-duration: 300ms;
-      animation-name: showMessage;
+      animation-name: show-message;
       animation-timing-function: ease;
 
       &.hide {
-        animation-name: hideMessage;
+        animation-name: hide-message;
         transform: translateY(1rem);
         opacity: 0;
       }

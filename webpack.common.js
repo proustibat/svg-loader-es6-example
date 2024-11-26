@@ -21,7 +21,7 @@ const getHtmlWebpackPluginInstances = () => {
             <header class="header">
                 <h1 class="title">SVG Loader ES6</h1>
                 <ul class="menu">
-                    ${ pagesList.map( pageLink => `<li class="${ pageLink.filename === page.filename ? 'isActive' : '' }"><a href="${ pageLink.filename }.html">${ pageLink.title }</a></li>` ).join( '' ) }
+                    ${ pagesList.map( pageLink => `<li class="${ pageLink.filename === page.filename ? 'is-active' : '' }"><a href="${ pageLink.filename }.html">${ pageLink.title }</a></li>` ).join( '' ) }
                     <li><a href="https://www.npmjs.com/package/svg-loader-es6" target="_blank">Install</a></li>
                 </ul>
             </header>`;

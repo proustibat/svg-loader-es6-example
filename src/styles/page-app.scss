@@ -19,7 +19,6 @@
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 7rem);
-    //justify-content: space-around;
     justify-content: flex-start;
   }
 
@@ -70,7 +69,7 @@
     border: 1px solid #2590ae;
     border-radius: 3px;
     padding: 10px;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
+    text-shadow: -1px -1px 0 rgb(0 0 0 / 50%);
     text-align: center;
     color: #fff;
     background-color: #30b1e5;
@@ -81,7 +80,7 @@
       border: 1px solid #1c7493;
       background-color: #2693bc;
       background-image: linear-gradient(to bottom, #2693bc, #135b79);
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 0 rgb(0 0 0 / 50%);
     }
   }
 
