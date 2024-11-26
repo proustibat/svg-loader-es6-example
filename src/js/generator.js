@@ -1,8 +1,8 @@
 import { SVGLoader } from 'svg-loader-es6';
-import { default as Clipboard } from 'clipboard';
-import { default as Prism } from '../vendors/prismjs/prism';
-import { default as JSColor } from '../vendors/jscolor';
-import { default as TinyColor } from 'tinycolor2';
+import Clipboard from 'clipboard';
+import Prism from '../vendors/prismjs/prism';
+import JSColor from '../vendors/jscolor';
+import TinyColor from 'tinycolor2';
 
 export default class Generator {
     constructor ( element ) {
@@ -41,7 +41,7 @@ export default class Generator {
                         input.min = 0;
                         input.max = 1;
                     }
-                    input.defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[ key ];
+                    input.defaultValue = key === 'fill' ? SVGLoader.defaultOptions.fill.replace( '#', '' ) : SVGLoader.defaultOptions[key];
                 } );
 
             // Init button to copy code
@@ -133,17 +133,17 @@ export default class Generator {
     setJSCode ( options ) {
         // Create dom content to display using Prism.js
         const optionsLines = Object.keys( options )
-            .filter( key => SVGLoader.defaultOptions[ key ] !== options[ key ] )
-            .map( key => { return `${ key }: '${ options[ key ] }'`; } );
+            .filter( key => SVGLoader.defaultOptions[key] !== options[key] )
+            .map( key => { return `${ key }: '${ options[key] }'`; } );
         const content = `new SVGLoader( {\n\t${ optionsLines.join( ',\n\t' ) }\n} );`;
 
         this.fillCodeContent( 'js', content );
     }
 
-    fillCodeContent ( language, content, ) {
+    fillCodeContent ( language, content ) {
         const contentEl = this.el.querySelector( `.source-${ language } .content` );
         const btn = this.el.querySelector( `.source-${ language } .btn-copy` );
-        contentEl.innerHTML = `<pre class="language-${ language }">${ Prism.highlight( content, Prism.languages[ language ] ) }</pre>`;
+        contentEl.innerHTML = `<pre class="language-${ language }">${ Prism.highlight( content, Prism.languages[language] ) }</pre>`;
         btn.setAttribute( 'data-clipboard-text', content );
     }
 

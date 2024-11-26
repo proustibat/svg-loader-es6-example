@@ -47,7 +47,6 @@ module.exports = {
         filename: 'js/[name].[hash].js',
         path: path.resolve( __dirname, 'dist' )
     },
-
     module: {
         rules: [
             {
@@ -61,12 +60,6 @@ module.exports = {
                 use: [
                     'file-loader?name=fonts/[name].[ext]'
                 ]
-            },
-            {
-                enforce: 'pre',
-                test: /\.js?$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'eslint-loader'
             },
             {
                 test: /\.(js)$/,

@@ -1,7 +1,8 @@
+/* global MutationObserver */
 import Data from '../assets/data';
 import { SVGLoader } from 'svg-loader-es6';
 import { modal as TingleModal } from 'tingle.js';
-import { default as Prism } from '../vendors/prismjs/prism';
+import Prism from '../vendors/prismjs/prism';
 
 export default class App {
     constructor ( element ) {
@@ -75,7 +76,7 @@ export default class App {
         mutationsList
             .filter( mutation => mutation.type === 'childList' )
             .forEach( () => {
-                this.page.classList[ `${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }` ]( 'empty' );
+                this.page.classList[`${ this.page.querySelectorAll( 'section' ).length === 0 ? 'add' : 'remove' }`]( 'empty' );
             } );
     }
 
@@ -109,7 +110,7 @@ export default class App {
 
         // set content
         const indexData = parseInt( btn.id.replace( 'btn-source-', '' ), 10 ) - 1;
-        const jsonOptions = Data.loadersOptions[ indexData ];
+        const jsonOptions = Data.loadersOptions[indexData];
         const jsonOptionsPretty = JSON.stringify( jsonOptions, null, '\t' );
         const prismJsCode = Prism.highlight( `const loader = new SVGLoader(${ jsonOptionsPretty })`, Prism.languages.javascript );
         const codeJSHTML = `<pre class="language-javascript">${ prismJsCode }</pre>`;

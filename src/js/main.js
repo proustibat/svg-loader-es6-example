@@ -20,7 +20,7 @@ document.ready().then( () => {
     // Find JS class to run depending on data-page-slug
     const selector = 'data-page-slug';
     const el = document.querySelector( `[${ selector }]` );
-    const SlugClass = el ? { App, Generator }[ el.getAttribute( selector ) ] : null;
+    const SlugClass = el ? { App, Generator }[el.getAttribute( selector )] : null;
 
     // Instantiation if a class is found
     if ( SlugClass ) {
