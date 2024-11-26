@@ -1,4 +1,4 @@
-import * as Data from '../assets/data';
+import Data from '../assets/data';
 import { SVGLoader } from 'svg-loader-es6';
 import { modal as TingleModal } from 'tingle.js';
 import { default as Prism } from '../vendors/prismjs/prism';

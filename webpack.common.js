@@ -41,7 +41,6 @@ const getHtmlWebpackPluginInstances = () => {
 
 module.exports = {
     entry: [
-        // 'babel-polyfill',
         './src/js/main.js',
         ...Object.values( pagesList ).map( page => `./src/${ page.filename }.ejs` )
     ],
@@ -77,13 +76,9 @@ module.exports = {
                 loader: 'eslint-loader'
             },
             {
-                test: /\.js?$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader',
-                options: {
-                    presets: [ 'babel-preset-latest' ],
-                    cacheDirectory: true
-                }
+                test: /\.(js)$/,
+                exclude: /node_modules/,
+                use: [ 'babel-loader' ]
             },
             {
                 test: /\.(png|jp(e*)g|svg)$/,

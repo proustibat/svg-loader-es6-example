@@ -16,9 +16,6 @@ module.exports ={
             'jsx': true
         }
     },
-    // If you’re using Flow or experimental ECMAScript features
-    // not supported by ESLint, enable babel-eslint parser
-    'parser': 'babel-eslint',
     // Predefined sets of global variables
     'env': {
         'browser': true,
