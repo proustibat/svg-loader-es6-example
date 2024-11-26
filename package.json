@@ -9,6 +9,8 @@
   "dependencies": {
     "clipboard": "2.0.11",
     "reset-css": "5.0.2",
+    "stylelint": "^16.10.0",
+    "stylelint-webpack-plugin": "^5.0.1",
     "svg-loader-es6": "1.1.1",
     "tingle.js": "0.16.0",
     "tinycolor2": "1.6.0"
@@ -39,6 +41,7 @@
     "sass-loader": "16.0.3",
     "standard": "17.1.2",
     "style-loader": "4.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
     "underscore-template-loader": "1.2.0",
     "url-loader": "4.1.1",
     "util": "0.12.5",
@@ -50,6 +53,7 @@
   "scripts": {
     "start": "node build.js && webpack serve --open --config webpack.dev.js",
     "build": "node build.js && webpack --config webpack.prod.js",
-    "lint:js": "eslint . --fix"
+    "lint:js": "eslint . --fix",
+    "lint:style": "stylelint 'src/styles/*.scss' --color --fix"
   }
 }
