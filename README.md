@@ -1,4 +1,6 @@
-# SVG Loader Vanilla ES6 - Example [![Build](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml/badge.svg)](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml)
+# SVG Loader Vanilla ES6 - Example 
+
+[![Build](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml/badge.svg)](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=proustibat_svg-loader-es6-example&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=proustibat_svg-loader-es6-example)
 
 This repo is a demo to show how to use **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)**.
 
