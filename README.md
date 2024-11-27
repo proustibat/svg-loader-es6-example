@@ -1,4 +1,4 @@
-# SVG Loader Vanilla ES6 - Example
+# SVG Loader Vanilla ES6 - Example [![Build](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml/badge.svg)](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml)
 
 This repo is a demo to show how to use **[SVG Loader ES6](https://github.com/proustibat/svg-loader-es6)**.
 
