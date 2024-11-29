@@ -811,9 +811,13 @@
   version "8.57.1"
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
 
-"@eslint/js@9.15.0", "@eslint/js@^9.0.0", "@eslint/js@^9.15.0":
+"@eslint/js@9.15.0":
   version "9.15.0"
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.15.0.tgz#df0e24fe869143b59731942128c19938fdbadfb5"
+
+"@eslint/js@^9.0.0", "@eslint/js@^9.16.0":
+  version "9.16.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-9.16.0.tgz#3df2b2dd3b9163056616886c86e4082f45dbf3f4"
 
 "@eslint/object-schema@^2.1.4":
   version "2.1.4"
