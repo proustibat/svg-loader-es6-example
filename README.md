@@ -1,6 +1,7 @@
 # SVG Loader Vanilla ES6 - Example 
 
-[![Build](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml/badge.svg)](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=proustibat_svg-loader-es6-example&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=proustibat_svg-loader-es6-example) ![NPM Downloads](https://img.shields.io/npm/dy/svg-loader-es6)
+[![Build](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml/badge.svg)](https://github.com/proustibat/svg-loader-es6-example/actions/workflows/build.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=proustibat_svg-loader-es6-example&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=proustibat_svg-loader-es6-example) ![NPM Downloads](https://img.shields.io/npm/dy/svg-loader-es6) ![NPM Version](https://img.shields.io/npm/v/svg-loader-es6)
+
 
 
 
