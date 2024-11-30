@@ -9,7 +9,7 @@
   "dependencies": {
     "clipboard": "2.0.11",
     "reset-css": "5.0.2",
-    "stylelint": "^16.10.0",
+    "stylelint": "^16.11.0",
     "stylelint-webpack-plugin": "^5.0.1",
     "svg-loader-es6": "1.1.5",
     "tingle.js": "0.16.0",
